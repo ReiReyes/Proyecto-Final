@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <AdminMenu/>
+    <Profile/>
     </>
   )
 }
