@@ -4,7 +4,7 @@ import "../assets/styles/Admin.css"
 import Headerp from "../components/Header-p"
 function AdminMenu(){
     return(
-        <div className="bodyAMenu">
+        <div className="bodyA">
 
         <Headerp primero= "Inicio" enlacep = "home" 
                  segundo="Gestionar Menú" enlaces = "Manage-menu"
