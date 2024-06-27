@@ -10,8 +10,8 @@ function Profile() {
 
   return (
     <>
-    <Header/>
     <div className='bodyProfile'>
+    <Header primero= "Perfil" segundo= "Metodos y Seguridad" tercero= "Historial" cuarto= "Log Out"/>
         <div className='User_Profile'>
             <img className="Img_user" src={ImgUser}></img>
             <img className="Img_change" src={change_pfp}></img>

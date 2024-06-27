@@ -86,8 +86,8 @@ left: 10vh;
 position: absolute;
 max-width: 40vh;
 height: auto;
-left: 89%; 
-transform: translateX(-67%); 
+left: 90%; 
+transform: translateX(-64%); 
 }
 
 .Img_change{
@@ -95,7 +95,7 @@ position: relative;
 max-width: 10vh;
 margin-top: 23vh;
 height: auto;
-left: 96%; 
+left: 100%; 
 transform: translateX(-67%); 
 }
 
