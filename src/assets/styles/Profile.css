@@ -77,9 +77,9 @@ flex-direction: column;
 .User_Profile {
 position: absolute;
 flex: 1;
-top: 60px;
+top: 10vh ;
 width: 50%;
-left: 12vh;
+left: 10vh;
 }
 
 .Img_user {
@@ -91,17 +91,17 @@ transform: translateX(-67%);
 }
 
 .Img_change{
-position: absolute;
+position: relative;
 max-width: 10vh;
-margin-top: 200px;
+margin-top: 23vh;
 height: auto;
 left: 96%; 
 transform: translateX(-67%); 
 }
 
 .container_user_options {
-        margin-top: 60vh; /* Adjust for smaller screens */
-        margin-left: 15vh;
+        margin-top: 65vh; 
+        margin-left: 6vh;
         width: 70%;
     }
 
