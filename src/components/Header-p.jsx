@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "../assets/styles/header-p.css";
 import logoMolokai from "../assets/imgs/imgHeader/Logo Molokai.png";
 import logoUnimet from "../assets/imgs/imgHeader/LogoUnimet.png";
