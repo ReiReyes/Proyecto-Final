@@ -8,7 +8,7 @@ import { auth, db } from './firebase';
 import { toast } from "react-toastify";
 import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
-import Header from "../components/Header-s.jsx";
+import Headers from "../components/Header-s.jsx";
 
 
 const LoginForm = () => {
@@ -83,7 +83,7 @@ const LoginForm = () => {
     return (
         
         <>
-        <Header/>
+        <Headers/>
         <div className="bodyL">
         <div className="wrapper">
             

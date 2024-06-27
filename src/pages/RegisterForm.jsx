@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import Header from "../components/Header-s.jsx";
+import Headers from "../components/Header-s.jsx";
 
 const RegisterForm = () => { 
     
@@ -51,7 +51,7 @@ const RegisterForm = () => {
 
     return (
     <>
-    <Header/>
+    <Headers/>
     <div className="bodyR">
     <div className="wrapper-r">
         

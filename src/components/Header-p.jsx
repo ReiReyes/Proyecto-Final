@@ -1,4 +1,4 @@
-import "../assets/styles/header.css";
+import "../assets/styles/header-p.css";
 import logoMolokai from "../assets/imgs/imgHeader/Logo Molokai.png";
 import logoUnimet from "../assets/imgs/imgHeader/LogoUnimet.png";
 import { useState } from "react";
