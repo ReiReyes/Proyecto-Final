@@ -1,12 +1,17 @@
 import '../assets/styles/Profile.css';
-import Header from '../components/Header';
+import Header from '../components/Header-p';
 import ImgUser from '../assets/imgs/imgUser/no_perfil.png'
 import change_pfp from '../assets/imgs/imgUser/change_pfp.png'
 
 function Profile() {
+
+
+
+
   return (
+    <>
+    <Header/>
     <div className='bodyProfile'>
-        <Header/>
         <div className='User_Profile'>
             <img className="Img_user" src={ImgUser}></img>
             <img className="Img_change" src={change_pfp}></img>
@@ -22,6 +27,7 @@ function Profile() {
           <input className='item_profile' placeholder='hallo' />
         </div>
     </div>
+    </>
   );
 }
 
