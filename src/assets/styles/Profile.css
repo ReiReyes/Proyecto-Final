@@ -75,22 +75,41 @@ flex-direction: column;
 }
 
 .User_Profile {
-position: relative;
-margin-top: 40vh;   
+position: absolute;
+flex: 1;
+top: 60px;
 width: 50%;
+left: 12vh;
+}
+
+.Img_user {
+position: absolute;
+max-width: 40vh;
+height: auto;
+left: 89%; 
+transform: translateX(-67%); 
 }
 
 .Img_change{
 position: absolute;
-max-width: 20vh;
-left: 70vh;
-top: 70%;
+max-width: 10vh;
+margin-top: 200px;
 height: auto;
+left: 96%; 
+transform: translateX(-67%); 
 }
 
 .container_user_options {
-        margin-top: 10vh; /* Adjust for smaller screens */
+        margin-top: 60vh; /* Adjust for smaller screens */
         margin-left: 15vh;
         width: 70%;
     }
+
+.titulo_profile {
+    font-size: 2.2em;
+}
+
+.item_profile {
+    font-size: 1.2em;
+}
 }
