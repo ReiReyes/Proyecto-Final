@@ -42,12 +42,13 @@ height: auto;
 }
 
 .container_user_options{
-    margin-top: 10vh;
+    margin-top: 10%;
     margin-right: 10vh;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     width: 300px;
+    height: auto;
 }
 
 .item_profile {
