@@ -3,6 +3,7 @@ import "../assets/styles/Admin.css"
 import "../assets/styles/AdminHist.css"
 import Headerp from "../components/Header-p"
 import Order from "../components/Order.jsx"
+import { FaMagnifyingGlass } from "react-icons/fa6";
 function AdminHist(){
     return(
         
@@ -13,7 +14,7 @@ function AdminHist(){
                  cuarto="Gestionar Promociones" enlacec= "Manage-coupons"/>
         <div className="adminh-wrap">
             <div className="listapedidos">
-            <h1 className="pedidotitulo">PEDIDO`S</h1>
+            <h1 className="pedidotitulo">PEDIDO`S <button className="busquedahis"><FaMagnifyingGlass className="lupa"/></button></h1>
             <div className="pedidoshistorial">
             <Order dato = "HO1820234 13:01 15/5/2024"/>
             </div>
