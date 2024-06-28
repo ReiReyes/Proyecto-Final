@@ -103,9 +103,12 @@ body {
   position: relative;
   left: 200px;
   top: -80px;
+  font-size: 30px;
 }
 
 .hora {
+  position: relative;
+  left: -50px;
   width: 275px;
   height: 80px;
   padding: 3px 72px 15px 66px;

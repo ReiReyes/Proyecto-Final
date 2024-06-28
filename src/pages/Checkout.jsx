@@ -1,4 +1,4 @@
-import Detalles from "../component/Detalles";
+import Detalles from "../components/Detalles";
 
 const Checkout = () => {
   return (
