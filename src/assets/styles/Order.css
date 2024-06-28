@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 .orderborder{
-    border-bottom: 2px solid #29CCBA;
+    
+    border-top: 2px solid #29CCBA;
     padding: 10px 43px;
     width: 100%;
 
@@ -23,4 +24,16 @@
     font-weight: 520;
     text-shadow: 0 1px 2px black;
     word-spacing: 5px;
+}
+.orderbutton:hover{
+    background-color: #0ea896;
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1244px){
+    .orderborder{
+        border: none;
+    }
+
 }

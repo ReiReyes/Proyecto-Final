@@ -1,81 +1,176 @@
-.adminh-wrap{
-    display: flex;
-    background-color: #29CCBA;
-    width: 80%;
-    height: 500px;
-    box-sizing: border-box;
-    margin-top: 180px;
-    border-radius: 50px;
-    
-
+.adminh-wrap {
+  display: flex;
+  background-color: #29ccba;
+  width: 80%;
+  height: 500px;
+  box-sizing: border-box;
+  margin-top: 180px;
+  border-radius: 50px;
 }
 
+.listapedidos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.listapedidos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    margin: 10px;
-    width: 30%;
-    height: 480px;
-    background-color: #F5F5F5;
-    border-radius: 50px 0 0 50px;
-
+  margin: 10px;
+  width: 30%;
+  height: 480px;
+  background-color: #f5f5f5;
+  border-radius: 50px 0 0 50px;
 }
 
-
-.pedidotitulo{  
-    display: flex;
-    align-items: center;
-    color: #29CCBA;
-    font-size: 1.8em;
-    font-weight: 200;
-    letter-spacing: 10px;
-    padding: 0px 32px;
-    border-bottom: 2px solid #29CCBA;
-}
-.busquedahis{
-    background: transparent;
-    border: none;
-
+.pedidotitulo {
+  display: flex;
+  align-items: center;
+  color: #29ccba;
+  font-size: 1.8em;
+  font-weight: 200;
+  letter-spacing: 10px;
+  padding: 0px 72px;
+  border-bottom: 2px solid #29ccba;
 }
 
-.lupa{
-    margin-top: 8px;
-    background-color: #29CCBA;
+.detalletitulo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.8em;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 0px 32px;
+  text-align: center;
+}
+
+.detallepedido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 70%;
+  height: 480px;
+  background-color: #29ccba;
+  border-radius: 0 50px 50px 0;
+}
+.close-icon-admin {
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8646c;
+  display: none;
+  font-size: 1.8rem;
+}
+
+.ordenes {
+  position: relative;
+  z-index: 10;
+  max-height: 370px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Ancho de la scrollbar para Firefox */
+  scrollbar-color: #29ccba #f5f5f5; /* Color del pulgar y del track de la scrollbar para Firefox */
+}
+
+/* Estilos para la scrollbar en navegadores WebKit */
+.ordenes::-webkit-scrollbar {
+  width: 10px; /* Ancho de la scrollbar */
+}
+
+.busqueda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px 65px;
+  margin: 5px 0 5px 25px;
+  height: 30px;
+  background-color: #f5f5f5;
+  border-radius: 50px;
+  border-color: #29ccba;
+  text-align: center;
+  border: 1px solid #29ccba;
+}
+
+.lupa-icon-admin{
+    display: none;
+}
+
+@media only screen and (max-width: 1244px) {
+  .lupa-icon-admin {
+    background-color: #29ccba;
+    display: contents;
     border: none;
     color: white;
-    font-size: 2.5em;
+    font-size: 0.8em;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    padding: 4px;
-    border-radius: 10px;
-}   
-.detalletitulo{
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 1.8em;
-    font-weight: 200;
-    letter-spacing: 1px;
-    padding: 0px 32px;
-}
+    padding: 6px;
+    border-radius: 400px;
+    
+    display: inline-block;
+  }
+  .busqueda {
+  
+    margin: 5px 0 5px 0;
+    
+  }
 
-.detallepedido{
+  .ordenes {
+    position: relative;
+    z-index: 10;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin; /* Ancho de la scrollbar para Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Color del pulgar y del track de la scrollbar para Firefox */
+  }
+ 
+
+  .listapedidos {
+    width: 10%;
+    background-color: #29ccba;
+  }
+  .textotitulo {
+    display: none;
+  }
+  .close-icon-admin {
+    display: contents;
+  }
+  .pedidotitulo {
+    border: none;
+  }
+  .lupa-icon-admin {
+    background-color: #f5f5f5;
+    color: #29ccba;
+  }
+  .pedidoshistorial {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
-    width: 70%;
-    height: 480px;
-    background-color: #29CCBA;
-    border-radius: 0 50px 50px 0;
-}
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #f5f5f5;
+    transition: 1s;
+    transform: translateX(-180vh);
+    z-index: 1000;
+  }
 
-@media only screen and (max-width: 1024px){
-    .listapedidos{
-        width: 10%;
-        
-    }
-    
+  .responsive_bus {
+    transform: none;
+  }
+  .close-icon-admin {
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    margin-bottom: 100px;
+  }
 }
