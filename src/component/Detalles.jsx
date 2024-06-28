@@ -13,11 +13,21 @@ const Checkout = () => {
       </div>
 
       {/* Estado de transacción */}
-      <div className="estado">
+
+
+      <div className="circulos">       
         <div className="circulo" />
         <div className="circulo" />
         <div className="circulo" />
+        <div className="linea-gris"></div>
       </div>
+      
+      <div className="nombreEstados">
+        <p>Detalles</p>
+        <p>Método de pago</p>
+        <p>Confirmación</p>
+      </div>
+      <p className="estadoActual">Detalles</p>
 
       {/* Delivery */}
       <div className="delivery">

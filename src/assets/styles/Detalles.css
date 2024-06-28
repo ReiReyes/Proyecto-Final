@@ -27,7 +27,9 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
+  
   align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .exit {
@@ -35,12 +37,23 @@ body {
 }
 
 /*-----------------Estado del CheckOut-----------------*/
-.estado {
-  margin-left: 100px;
+
+.linea-gris {
+  position: relative;
+  /* left: -1060px;
+  top: 25px; */
+  width: 100px;
+  height: 2px;
+  background-color: #ccc;
+  z-index: -1;
+}
+
+.circulos {
+  margin-left: 130px;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 20px;
   display: flex;
-  gap: 20%; /* Espacio entre los círculos */
+  gap: 340px; /* Espacio entre los círculos */
 }
 
 .circulo {
@@ -52,10 +65,34 @@ body {
   background-color: rgba(255, 253, 253, 1);
 }
 
+.nombreEstados {
+  display: flex;
+  font-size: 30px;
+}
+
+.nombreEstados p {
+  margin-left: 30px;
+  padding: 0 4rem;
+  margin-right: 40px; /* Agrega espacio entre los elementos */
+  margin-bottom: 20px;
+}
+
+.estadoActual{
+  margin-left: 100px;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+
+.nombreEstados,
+.estadoActual{
+  color:#15297C;
+}
+
 /*-----------------Hora de delivery-----------------*/
 .delivery {
   height: 300px;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 30px;
   border: 2px solid rgba(41, 204, 186, 1);
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 1);
@@ -64,8 +101,22 @@ body {
 }
 .horaEntrega {
   position: relative;
+  left: 200px;
+  top: -80px;
 }
 
+.hora {
+  width: 275px;
+  height: 80px;
+  padding: 3px 72px 15px 66px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: rgba(41, 204, 186, 1);
+}
+
+
+/*-----------------Bóton de confirmar-----------------*/
 .confirmar-boton {
   position: relative;
   top: 100px;
@@ -79,21 +130,12 @@ body {
 
 .confirmar {
   display: flex;
+  justify-content: center; /* Centra horizontalmente*/
+  align-items: center; /* Centra verticalmente*/
   color: rgba(255, 255, 255, 1);
   font-size: 40px;
-  line-height: 40px;
   font-family: Inter, sans-serif;
   font-weight: 700;
-}
-
-.hora {
-  width: 275px;
-  height: 80px;
-  padding: 3px 72px 15px 66px;
-  border: 1px solid rgba(255, 255, 255, 1);
-  border-radius: 20px;
-  box-sizing: border-box;
-  background-color: rgba(41, 204, 186, 1);
 }
 
 .set-hora {
@@ -112,5 +154,5 @@ body {
 .delivery,
 .confirmar-boton {
   margin-left: 100px;
-  width: 40%;
+  width: 800px;
 }
