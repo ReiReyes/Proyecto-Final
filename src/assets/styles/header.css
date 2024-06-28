@@ -142,7 +142,7 @@
 
     
     @media only screen and (max-width: 1024px){
-      button{
+      .menu-icon{
         display: contents ;
       }
       
@@ -176,6 +176,7 @@
       }
       
         nav .close-icon{
+          display: contents ;
           display: flex;
           position: absolute;
           top: 2rem;

@@ -1,9 +1,8 @@
 import "../assets/styles/Order.css";
-function Order() {
+function Order(props) {
   return (
-    <div>
-      <h1>hello</h1>
-      <button>click me</button>
+    <div className="orderborder">
+      <button className="orderbutton">{props.dato}</button>
     </div>
   );
 }

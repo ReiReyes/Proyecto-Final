@@ -94,7 +94,10 @@
 
     
     @media only screen and (max-width: 1224px){
-      button{
+      button .menu-icon-p{
+        display: contents ;
+      }
+      button .close-icon-p{
         display: contents ;
       }
       .menu-icon-p{
