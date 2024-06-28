@@ -37,9 +37,9 @@ const Checkout = () => {
             <p className="set-hora">2pm</p>
           </div>
       </div>
-      <div className="confirmar-boton">
+      <button className="confirmar-boton" onClick={() => redirectToMetodoPago()}>
         <p className="confirmar">Confirmar</p>
-      </div>
+      </button>
     </detalles>
   );
 };
