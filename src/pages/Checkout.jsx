@@ -1,6 +1,6 @@
-import Detalles from "../component/Detalles";
-import MetodoPago from "../component/MetodoPago";
-import Finalizar from "../component/Finalizar";
+import Detalles from "../components/Detalles";
+import MetodoPago from "../components/MetodoPago";
+import Finalizar from "../components/Finalizar";
 
 
 const Checkout = () => {
