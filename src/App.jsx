@@ -4,13 +4,14 @@ import LandingPage from './pages/LandingPage.jsx'
 import AdminMenu from './pages/AdminMenu.jsx'
 import AdminHist from './pages/AdminHist.jsx'
 import Profile from './pages/Profile.jsx'
+import AdminPromo from './pages/AdminPromo.jsx'
 
 
 function App() {
 
   return (
     <>
-    <AdminHist/>
+    <AdminPromo/>
     </>
   )
 }
