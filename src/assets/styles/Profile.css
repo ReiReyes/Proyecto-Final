@@ -19,6 +19,7 @@
     background-size: cover;
     background-position:  center;
     padding: 20px;
+    padding-top: 60px; 
 }
 
 .User_Profile {
@@ -43,11 +44,13 @@ height: auto;
 
 .container_user_options{
     margin-top: 10vh;
-    margin-right: 10vh;
+    margin-right: 5vh;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    width: 300px;
+    position: relative;
+    max-width: 40vh;
+    height: auto;
 }
 
 .item_profile {
@@ -72,12 +75,13 @@ height: auto;
 
 .bodyProfile {
 flex-direction: column;
+padding-top: 20px;
 }
 
 .User_Profile {
 position: absolute;
 flex: 1;
-top: 10vh ;
+top: 10vh;
 width: 50%;
 left: 10vh;
 }
