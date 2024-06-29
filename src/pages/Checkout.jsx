@@ -1,22 +1,19 @@
-import Detalles from "../components/Detalles";
+import Detalles from "../component/Detalles";
+import MetodoPago from "../component/MetodoPago";
+import Finalizar from "../component/Finalizar";
+
 
 const Checkout = () => {
   return (
     <div>
-      <Detalles />
+      {/* <Detalles /> */}
+      {/* <MetodoPago/> */}
+
+      {/* Hay que separar las paginas */}
+      
+      <Finalizar/>
+
     </div>
   );
 };
-
 export default Checkout;
-
-{/* <BrowserRouter>
-  <Routes>
-    <Route index  element={user?<Navigate to ='/Profile'/> : <Detalles />} />
-    <Route path="/Login" element={<LoginForm />} />
-    <Route path="/Register" element={<RegisterForm />} />
-    <Route path="/Profile" element={<Profile />} />
-    <Route path="/LandingPage" element={<LandingPage />} />
-  </Routes>
-  <ToastContainer/>
-</BrowserRouter> */}
