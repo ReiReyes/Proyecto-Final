@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
 }
 
 .bodyProfile_Sec {
@@ -21,9 +21,11 @@
     padding-top: 60px; 
 }
 
-.card_box_1 {
+.card_box {
     width: 100%;
     margin: auto;
+    position: relative;
+    left: 5vh;
 }
 
 .card_box_2 {
@@ -37,14 +39,18 @@
     flex-direction: row;
     align-items: center;
     margin-top: 5vh;
-    margin-left: 15vh;
+    margin-left: 20vh;
 }
 
 .titles_security {
-    font-size: 50px;
+    font-size: 2.5em;
     line-height: 60px;
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #29CCBA;
+    height: 80px;
+    font-weight: 200;
+    overflow: hidden;
 }
 
 .cards{
@@ -59,12 +65,94 @@
     width: 100%;
     background: #ffffff;
     border-radius: 10px;
-    padding: 80px;
-    margin-bottom: 60px;
+    padding: 60px;
+    margin-bottom: 30px;
     transition: .3s;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
+    border-color: #29CCBA;
+    text-align: center;
+}
+
+
+.card_preferences {
+    max-width: calc(83.33% - 20px);
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 60px;
+    margin-bottom: 30px;
+    transition: .3s;
+    border: 2px solid transparent;
+    border-color: #29CCBA;
+    text-align: center;
 }
 
 .card:hover{
-    border-color: #29CCBA;
+    border-color: #F8646C;
+}
+
+.cards_button:hover{
+  background-color: #F8646C;
+  border: 2px solid #F8646C;
+}
+
+.cards_button {
+height: 60px;
+    min-width: 100%;
+  background-color: #29CCBA;
+  outline: none;
+  border: 2px solid #29CCBA;
+  border-radius: 10px;
+  font-family: "poppins", sans-serif; 
+  font-size: 1.6vw;
+  color:#ffffff;
+  transition: .3s;
+}
+
+.display_correo {
+  color:#ffffff;
+  background-color: #29CCBA;
+  border: 2px solid #29CCBA;
+  border-radius: 10px;
+  font-family: "poppins", sans-serif; 
+  font-size: 1.6vw;
+  padding: 10px 20px 10px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: .3s;
+
+}
+
+.display_correo:hover{
+  background-color: #F8646C;
+  border: 2px solid #F8646C;
+}
+
+.preference_text {
+    text-align: left;
+    font-size: 1.2em;
+    color: #29CCBA;
+}
+
+.preference_text_2 {
+    text-align: left;
+    padding-top: 20px;
+    font-size: 1.2em;
+    color: #29CCBA;
+}
+
+.fa-ul{
+    position: relative;
+    right: 5vh;
+    top: 1%;
+    font-size: 1.3em;
+}
+
+.fa-li{
+    color: #29CCBA;
+}
+
+.second-check {
+    font-size: 1em;
+    margin-top: 2vh;
 }
