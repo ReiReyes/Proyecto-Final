@@ -170,13 +170,11 @@ body {
 .delivery,
 .confirmar-boton {
   margin-left: 100px;
+  width: 800px;
 }
 
 @media (max-width: 1200px){
   
-  body{
-    background-color: rgb(109, 109, 109);
-  }
 
   .delivery,
   .confirmar-boton {

@@ -59,5 +59,13 @@
 }
 
 @media (max-width: 1200px){
-  
-}
+  .finalizadoCuadro {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .comentar-boton {
+    background-color: #E25B63;
+  }
+
+} 

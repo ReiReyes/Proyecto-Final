@@ -2,7 +2,7 @@ import Detalles from "../components/Detalles";
 import MetodoPago from "../components/MetodoPago";
 import Finalizar from "../components/Finalizar";
 import Confirmado from "../components/Confirmado";
-
+import Comentarios from "../components/Comentarios";
 
 const Checkout = () => {
   return (
@@ -12,6 +12,7 @@ const Checkout = () => {
       <MetodoPago/> 
       <Finalizar/>
       <Confirmado/>
+      {/* <Comentarios/> */}
     </div>
   );
 };

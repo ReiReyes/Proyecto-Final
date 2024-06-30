@@ -32,5 +32,9 @@
 }
 
 @media (max-width: 1200px){
-  
+  .confirmarCuadro2,
+  .confirmarCuadro1{
+    margin-left: 0px;
+    width: 100%;
+  }
 }
