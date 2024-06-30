@@ -53,6 +53,24 @@ height: auto;
     height: auto;
 }
 
+.loading_screen_profile{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #EFEFEF;
+    background-size: cover;
+    background-position:  center;
+    padding: 20px;
+    padding-top: 60px;
+    color: #29CCBA;
+    font-size: 5em;
+}
+
 .item_profile {
      background-color: #ffffff;
     color: #000000;

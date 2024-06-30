@@ -50,7 +50,7 @@ function Profile() {
   };
 
   if (!userDetails) {
-    return <div>Loading...</div>;
+    return <div className="loading_screen_profile">loading...</div>;
   }
 
   return (
