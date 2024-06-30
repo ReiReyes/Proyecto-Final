@@ -9,11 +9,12 @@ function Profile_Sec() {
 const [cards] = useState([
   {
     title: 'Contraseña',
-    text: 'Cambiar Contraseña',
+    text: 'Cambiar',
   },
   {
-    title: 'Paypal',
-    text: 'yo hello guys its asian guy streamer here',
+    title: 'Pago en Linea',
+    text: 'Paypal',
+
   },
 ]);
 
@@ -40,7 +41,7 @@ const [cards2] = useState([
           <div className='cards'>
               <h3 className='titles_security'>{card.title}</h3>
             <div key={i} className='card'>
-                <button>{card.text}</button>
+                <button className='cards_button'>{card.text}</button>
             </div>
           </div>
             ))

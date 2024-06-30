@@ -77,3 +77,17 @@
 .card:hover{
     border-color: #F8646C;
 }
+
+.cards_button {
+height: 60px;
+    min-width: 100%;
+  background-color: #29CCBA;
+  outline: none;
+  border: 2px solid #29CCBA;
+  border-radius: 10px;
+  font-family: "poppins", sans-serif; 
+  font-size: 1.6vw;
+  color:#ffffff;
+}
+
+
