@@ -33,6 +33,7 @@ function App() {
         <Route path="/Profile" element = {<Profile />} />
         <Route path="/LandingPage" element = {<LandingPage/>} />
         <Route path="/register" element = {<RegisterForm/>} />
+        <Route path="/Profile_security" element = { <Profile_Sec />} />
       </Routes>
     </BrowserRouter>
 

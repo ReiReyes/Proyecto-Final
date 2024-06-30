@@ -57,7 +57,7 @@ function Profile_Sec() {
     <>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <div className='bodyProfile_Sec'>
-        <Header primero="Perfil" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
+        <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
         <section className='section_options'>
           <div className='card_box'>
             <div className='cards'>

@@ -57,7 +57,7 @@ function Profile() {
     <>
       <form onSubmit={handleSave}>
         <div className='bodyProfile'>
-          <Header primero="Perfil" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
+          <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
           <div className='User_Profile'>
             <img className="Img_user" src={ImgUser} alt="User" />
             <img className="Img_change" src={change_pfp} alt="Change" />
