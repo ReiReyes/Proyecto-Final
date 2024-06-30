@@ -14,7 +14,11 @@ import Headers from "../components/Header-s.jsx";
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const adminCorreo = [
+        "Reinaldo@Molokai.com","Juan@Molokai.com","Andres@Molokai.com",
+        "Luis@Molokai.com","Carlos@Molokai.com"
+    ]
+    const [isAdmin, setIsAdmin] = useState(false);
 
     //se encarga del login
     const handleSubmit = async(e) => {
@@ -40,27 +44,6 @@ const LoginForm = () => {
     function googleLogin() {
       const provider = new GoogleAuthProvider();
       signInWithPopup(auth, provider).then(async (result) => {
-        console.log(result);
-        const user = result.user;
-        if (result.user) {
-          await setDoc(doc(db, "Users", user.uid), {
-            email: user.email,
-            nombre: user.displayName,
-            photo: user.photoURL,
-            apellido: "",
-            rol: "",
-            telefono: "",
-          });
-          toast.success("Usuario loggeado correctamente!", {
-            position: "top-center",
-          });
-          window.location.href = "/LandingPage";
-        }
-      });
-    }
-    function facebookLogin() {
-        const providerf = new FacebookAuthProvider();
-        signInWithPopup(auth, providerf).then(async (result) => {
         console.log(result);
         const user = result.user;
         if (result.user) {
@@ -111,7 +94,6 @@ const LoginForm = () => {
                     <p className="continue-p">-- O continua con--</p>
                         <div className="social">
                         <img className="socialImg" src={'./src/assets/imgs/google.jpg'} onClick={googleLogin}/>
-                        <img className="socialImg"src={'./src/assets/imgs/facebook.svg'} onClick={facebookLogin}/>
                         </div>
                 </div>
 
