@@ -10,12 +10,15 @@ const Checkout = () => {
       {/* Barra */}
       <div className="top-bar">
         <div className="blueBar">
+
+
+          {/* flecha para salir */}
           <img src={exit} className="exit"></img>
+          
         </div>
       </div>
 
       {/* Estado de transacción */}
-
       <div className="linea"></div>
       <div className="circulos">       
         <div className="circuloRelleno" />
@@ -38,7 +41,10 @@ const Checkout = () => {
             <p className="set-hora">2pm</p>
           </div>
       </div>
-      <button className="confirmar-boton" onClick={() => redirectToMetodoPago()}>
+
+
+      {/* Boton para ir a metodo de pago */}
+      <button className="confirmar-boton" onClick={() => href="/metodopago"}>
         <p className="confirmar">Confirmar</p>
       </button>
     </detalles>

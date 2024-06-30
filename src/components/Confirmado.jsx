@@ -24,6 +24,8 @@ const Checkout = () => {
     <confirmado>
       <div className="top-bar">
         <div className="blueBar">
+
+          {/* flecha para salir */}
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
@@ -41,11 +43,13 @@ const Checkout = () => {
         <br />
       </div>
 
-
+      {/* Boton para ir a comentar */}
       <button className="comentar-boton" onClick={redirectToMetodoPago}>
         <p className="comentar">Comentar</p>
       </button>
       <br />
+
+      {/* Boton para ir al menu (LandingPage) */}
       <button className="confirmar-boton" onClick={redirectToMetodoPago}>
         <p className="confirmar">Menú</p>
       </button>

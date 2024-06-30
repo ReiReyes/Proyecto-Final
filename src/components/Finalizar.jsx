@@ -24,6 +24,8 @@ const Checkout = () => {
     <finalizar>
       <div className="top-bar">
         <div className="blueBar">
+
+          {/* flecha para salir */}
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
@@ -55,6 +57,7 @@ const Checkout = () => {
         <p className="informacion">Total a pagar: </p>
       </div>
 
+      {/* Boton para ir a confirmado */}
       <button className="confirmar-boton" onClick={redirectToMetodoPago}>
         <p className="confirmar">Finalizar</p>
       </button>

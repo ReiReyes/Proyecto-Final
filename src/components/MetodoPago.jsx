@@ -29,6 +29,8 @@ const Checkout = () => {
       {/* Barra */}
       <div className="top-bar">
         <div className="blueBar">
+
+          {/* flecha para salir */}
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
@@ -58,6 +60,7 @@ const Checkout = () => {
           <img src={debito} className="debito" alt="Debito"></img>
           <button className={isSeleccionPago1Clicked ? 'seleccionPago1 clicked' : 'seleccionPago1'} onClick={handleClickSeleccionPago1}></button>
           <img src={paypal} className="paypal" alt="Paypal"></img>
+
         </div>
         <p className="pagar">Detalles del pago</p>
         <input className='nombreTarjeta' placeholder='Nombre en tarjeta' />
@@ -69,6 +72,8 @@ const Checkout = () => {
 
       </div>
 
+
+      {/* Boton para ir a finalizar */}
       <button className="confirmar-boton" onClick={redirectToMetodoPago}>
         <p className="confirmar">Confirmar</p>
       </button>
