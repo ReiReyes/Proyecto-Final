@@ -19,7 +19,6 @@ const Checkout = () => {
         <div className="circulo" />
         <div className="circulo" />
         <div className="circulo" />
-        <div className="linea-gris"></div>
       </div>
       
       <div className="nombreEstados">

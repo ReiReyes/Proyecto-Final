@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment-timezone'; // npm install moment-timezone
-import "../assets/styles/Finalizar.css";
+import "../assets/styles/Confirmado.css";
 import exit from "../assets/images/imgDetalles/Exit.png";
 import delivery from "../assets/images/imgDetalles/imagenDelivery.png";
 
@@ -28,21 +28,12 @@ const Checkout = () => {
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
-
-      <div className="circulos">       
-        <div className="circulo" />
-        <div className="circulo" />
-        <div className="circulo" />
-      </div>
+      <br/>
+      <p className="pagoExitoso">¡Pago exitoso!</p>
       
-      <div className="nombreEstados">
-        <p>Detalles</p>
-        <p>Método de pago</p>
-        <p>Confirmación</p>
-      </div>
-      <p className="estadoActual">Confirmar</p>
-
-      <div className="confirmarCuadro1">
+      <div className="finalizadoCuadro">
+        <p className="informacion">Número de Orden: </p>
+        <br />
         <p className="informacion">Método de pago: </p>
         <br />
         <p className="informacion">Fecha de pedido: {moment().format('DD/MM/YYYY')}</p>
@@ -51,12 +42,13 @@ const Checkout = () => {
         <br />
       </div>
 
-      <div className="confirmarCuadro2">
-        <p className="informacion">Total a pagar: </p>
-      </div>
 
+      <button className="comentar-boton" onClick={redirectToMetodoPago}>
+        <p className="comentar">Comentar</p>
+      </button>
+      <br />
       <button className="confirmar-boton" onClick={redirectToMetodoPago}>
-        <p className="confirmar">Finalizar</p>
+        <p className="confirmar">Menú</p>
       </button>
     </detalles>
   );

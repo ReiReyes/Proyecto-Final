@@ -89,7 +89,7 @@ body {
   color:#15297C;
 }
 
-/*-----------------Hora de delivery-----------------*/
+/*-----------------Caja-----------------*/
 .delivery {
   height: 300px;
   padding: 0px 0px 0px 30px;
@@ -99,9 +99,11 @@ body {
   display: flex;
   align-items: center;
 }
+
 .horaEntrega {
   position: relative;
-  left: 200px;
+  font-size: 30px;
+  left: 250px;
   top: -80px;
 }
 
@@ -119,7 +121,7 @@ body {
 /*-----------------Bóton de confirmar-----------------*/
 .confirmar-boton {
   position: relative;
-  top: 100px;
+  top: 50px;
   height: 82px;
   padding: 17px 252px 25px 250px;
   border-radius: 100px;
@@ -168,5 +170,67 @@ body {
 .delivery,
 .confirmar-boton {
   margin-left: 100px;
-  width: 800px;
+}
+
+@media (max-width: 1200px){
+  
+  body{
+    background-color: rgb(109, 109, 109);
+  }
+
+  .delivery,
+  .confirmar-boton {
+    margin-left: 0px;
+    width: 100%;
+  } 
+  
+  .circulos {
+
+    gap: 200px; /* Espacio entre los círculos */
+  }
+
+  .nombreEstados {
+    font-size: 20px;
+  }
+  
+  .nombreEstados p {
+    margin-left: 50px;
+    padding: 0 4rem;
+    margin-right: -40px; /* Agrega espacio entre los elementos */
+    margin-bottom: 20px;
+  }
+
+  .imgDelivery {
+    display: none; 
+  }
+
+  .delivery {
+    padding: 0px 0px 0px 0px;
+    justify-content: center; /* Agregamos esta propiedad para centrar horizontalmente el contenido */
+  }
+
+    .horaEntrega {
+    position: relative;
+    font-size: 30px;
+    left: 150px;
+    top: -80px;
+  }
+
+  .hora {
+    position: relative;
+    left: -100px;
+    width: 275px;
+    height: 80px;
+    padding: 4px 72px 15px 66px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: rgba(41, 204, 186, 1);
+  }
+
+  .confirmar-boton {
+    position: relative;
+    margin-left: 10%;
+  }
+  
 }
