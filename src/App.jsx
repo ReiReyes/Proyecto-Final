@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-    <Profile_Sec/>
+    <LoginForm/>
     </>
   )
 }
