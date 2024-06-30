@@ -2,7 +2,7 @@
   display: flex;
   background-color: #29ccba;
   width: 80%;
-  height: 500px;
+  height: 80%;
   box-sizing: border-box;
   margin-top: 180px;
   border-radius: 50px;
@@ -30,9 +30,9 @@
   padding: 0px 60px;
   border-bottom: 2px solid #29ccba;
 }
-.separador{
+.separador {
   display: flex;
-  width: 880px;
+  width: 100%;
   border-bottom: 2px solid white;
 }
 .detalletitulo {
@@ -43,7 +43,6 @@
   font-weight: 200;
   letter-spacing: 1px;
   text-align: center;
-  
 }
 
 .detallepedido {
@@ -52,8 +51,8 @@
   align-items: center;
   margin: 10px;
   width: 70%;
-  height: 480px;
-  background-color: #29ccba;
+  height: 100%;
+  
   border-radius: 0 50px 50px 0;
 }
 .close-icon-admin {
@@ -74,10 +73,9 @@
   z-index: 10;
   max-height: 370px;
   overflow-y: auto;
-  scrollbar-width: thin; 
-  scrollbar-color: #29ccba #f5f5f5; 
+  scrollbar-width: thin;
+  scrollbar-color: #29ccba #f5f5f5;
 }
-
 
 .ordenes::-webkit-scrollbar {
   width: 10px;
@@ -87,22 +85,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 0px 65px;
-  margin: 5px 0 5px 25px;
+  margin: 5px 0;
+  width: 100%;
   height: 30px;
   background-color: #f5f5f5;
   border-radius: 50px;
   border-color: #29ccba;
   text-align: center;
   border: 1px solid #29ccba;
+  color: grey;
 }
 
-.lupa-icon-admin{
-    display: none;
+.lupa-icon-admin {
+  display: none;
 }
 
-.detalles{
+.detalles {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -110,18 +108,16 @@
   width: 100%;
   height: 420px;
   border-radius: 50px;
-
 }
-.dato{
+.dato {
   display: block;
   align-items: center;
   color: white;
   padding: 0px 32px;
   text-align: center;
   margin-bottom: 2px;
-
 }
-.titulodato{
+.titulodato {
   display: flex;
   align-items: center;
   color: white;
@@ -132,7 +128,7 @@
   text-align: center;
   margin-bottom: 2px;
 }
-.infodato{
+.infodato {
   display: flex;
   align-items: center;
   color: white;
@@ -147,42 +143,48 @@
   justify-content: center;
   border-radius: 10px;
   border: 2px solid white;
-
 }
-.tuOrden{
+.tuOrden {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  width: 60%;
+  width: 100%;
   background-color: #f5f5f5;
   color: #f8646c;
   border-radius: 50px;
 }
-.orden{
+.orden {
   position: relative;
   z-index: 10;
   max-height: 400px;
   overflow-y: auto;
-  scrollbar-width: thin; 
-  scrollbar-color: #29ccba #f5f5f5; 
+  scrollbar-width: thin;
+  scrollbar-color: #29ccba #f5f5f5;
 }
 .tuOrden::-webkit-scrollbar {
   width: 10px;
 }
 
 @media only screen and (max-width: 1244px) {
-  .datos{
-    padding: 0px 10px;
+@media only screen and (max-width: 550px){
+  .adminh-wrap{
+    margin-top: 200px;
   }
-  .orden{
-    width: 100%;
+  .tuOrden{
+    border-radius: 20px;
+  }
+}
+  .dato {
     display: flex;
     flex-direction: column;
+    font-size: 10px;
+    width: 100px;
+    padding: 2px;
   }
-
-  .datos{
+  .orden {
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -198,13 +200,11 @@
     cursor: pointer;
     padding: 6px;
     border-radius: 400px;
-    
+
     display: inline-block;
   }
   .busqueda {
-  
     margin: 5px 0 5px 0;
-    
   }
 
   .ordenes {
@@ -215,7 +215,6 @@
     scrollbar-width: thin; /* Ancho de la scrollbar para Firefox */
     scrollbar-color: #888 #f1f1f1; /* Color del pulgar y del track de la scrollbar para Firefox */
   }
- 
 
   .listapedidos {
     width: 10%;
@@ -239,7 +238,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
