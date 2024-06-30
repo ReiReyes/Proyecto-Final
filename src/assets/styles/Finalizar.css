@@ -14,19 +14,15 @@
   height: 100px;
 }
 
-
-
 .informacion{
   position: relative;
   top:30px;
   font-size: 25px;
 }
 
-
 /*Seteo de ubicación*/
 .confirmarCuadro2,
-.confirmarCuadro1,
-.confirmar-boton {
+.confirmarCuadro1 {
   margin-left: 100px;
   width: 800px;
 }

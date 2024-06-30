@@ -21,41 +21,44 @@ body {
 }
 
 .top-bar {
+  margin-bottom: 5%;
   background-color: #29CCBA;
   color: white;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
+  padding: 40px 60px;
 
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .exit {
-  height: 35px;
+  height: 50px;
 }
 
 /*-----------------Estado del CheckOut-----------------*/
 
-.linea-gris {
+.linea {
+  pointer-events: none;
   position: relative;
-  /* left: -1060px;
-  top: 25px; */
-  width: 100px;
-  height: 2px;
-  background-color: #ccc;
+  top: 25px;
+  margin-left: 150px;
+  width: 800px; /* Define el ancho del cuadrado */
+  height: 2px; /* Define la altura del cuadrado */
+  background-color: #948989; /* Color de fondo del cuadrado */
+  pointer-events: none;
   z-index: -1;
 }
 
 .circulos {
   margin-left: 130px;
-  margin-top: 5%;
   margin-bottom: 20px;
   display: flex;
   gap: 340px; /* Espacio entre los círculos */
 }
 
+.circuloRelleno,
 .circulo {
   width: 50px;
   height: 50px;
@@ -63,6 +66,10 @@ body {
   border-radius: 25px;
   box-sizing: border-box;
   background-color: rgba(255, 253, 253, 1);
+}
+
+.circuloRelleno{
+  background-color: #F8646C;
 }
 
 .nombreEstados {
@@ -133,6 +140,20 @@ body {
   cursor: pointer;
 }
 
+.confirmar-boton:hover {
+  background-color: rgba(31, 184, 166, 1);
+}
+
+.confirmar-boton:active {
+  transform: translateY(2px); /* Efecto de presionar el botón */
+}
+
+.delivery,
+.confirmar-boton {
+  margin-left: 100px;
+  width: 800px;
+}
+
 .confirmar {
   display: flex;
   justify-content: center;
@@ -144,14 +165,6 @@ body {
   border: none;
   outline: none;
   background: none;
-}
-
-.confirmar-boton:hover {
-  background-color: rgba(31, 184, 166, 1);
-}
-
-.confirmar-boton:active {
-  transform: translateY(2px); /* Efecto de presionar el botón */
 }
 
 .set-hora {
@@ -167,23 +180,24 @@ body {
   margin-right: 10px;
 }
 
-.delivery,
-.confirmar-boton {
-  margin-left: 100px;
-  width: 800px;
-}
-
 @media (max-width: 1200px){
   
 
-  .delivery,
-  .confirmar-boton {
+  .delivery{
     margin-left: 0px;
     width: 100%;
   } 
-  
-  .circulos {
 
+  .confirmar-boton {
+    width: 40%;
+    margin-left: 30%;
+  }
+  
+  .linea {
+    width: 500px;
+
+  }
+  .circulos {
     gap: 200px; /* Espacio entre los círculos */
   }
 
@@ -226,9 +240,5 @@ body {
     background-color: rgba(41, 204, 186, 1);
   }
 
-  .confirmar-boton {
-    position: relative;
-    margin-left: 10%;
-  }
   
 }

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import moment from 'moment-timezone'; // npm install moment-timezone
 import "../assets/styles/Finalizar.css";
 import exit from "../assets/images/imgDetalles/Exit.png";
-import delivery from "../assets/images/imgDetalles/imagenDelivery.png";
 
 const Checkout = () => {
   const [horaVenezuela, setHoraVenezuela] = useState('');
@@ -22,17 +21,18 @@ const Checkout = () => {
   };
 
   return (
-    <detalles>
+    <finalizar>
       <div className="top-bar">
         <div className="blueBar">
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
 
+      <div className="linea"></div>
       <div className="circulos">       
         <div className="circulo" />
         <div className="circulo" />
-        <div className="circulo" />
+        <div className="circuloRelleno" />
       </div>
       
       <div className="nombreEstados">
@@ -58,7 +58,7 @@ const Checkout = () => {
       <button className="confirmar-boton" onClick={redirectToMetodoPago}>
         <p className="confirmar">Finalizar</p>
       </button>
-    </detalles>
+    </finalizar>
   );
 };
 

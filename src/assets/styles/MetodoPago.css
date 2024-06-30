@@ -73,8 +73,7 @@
   }
 
   /*Otros*/
-  .metodoPago,
-  .confirmar-boton {
+  .metodoPago {
     margin-left: 100px;
     width: 800px;
   }

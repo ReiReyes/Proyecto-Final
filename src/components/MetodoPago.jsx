@@ -25,7 +25,7 @@ const Checkout = () => {
   };
 
   return (
-    <detalles>
+    <metodo>
       {/* Barra */}
       <div className="top-bar">
         <div className="blueBar">
@@ -34,9 +34,10 @@ const Checkout = () => {
       </div>
 
       {/* Estado de transacción */}
+      <div className="linea"></div>
       <div className="circulos">       
         <div className="circulo" />
-        <div className="circulo" />
+        <div className="circuloRelleno" />
         <div className="circulo" />
       </div>
       
@@ -71,7 +72,7 @@ const Checkout = () => {
       <button className="confirmar-boton" onClick={redirectToMetodoPago}>
         <p className="confirmar">Confirmar</p>
       </button>
-    </detalles>
+    </metodo>
   );
 };
 

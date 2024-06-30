@@ -2,6 +2,8 @@ import "../assets/styles/Detalles.css";
 import exit from "../assets/images/imgDetalles/Exit.png";
 import delivery from "../assets/images/imgDetalles/imagenDelivery.png";
 
+
+
 const Checkout = () => {
   return (
     <detalles>
@@ -14,9 +16,9 @@ const Checkout = () => {
 
       {/* Estado de transacción */}
 
-
+      <div className="linea"></div>
       <div className="circulos">       
-        <div className="circulo" />
+        <div className="circuloRelleno" />
         <div className="circulo" />
         <div className="circulo" />
       </div>

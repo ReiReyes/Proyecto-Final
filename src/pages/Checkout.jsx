@@ -1,3 +1,5 @@
+import { BrowserRouter as Router} from "react-router-dom";
+
 import Detalles from "../components/Detalles";
 import MetodoPago from "../components/MetodoPago";
 import Finalizar from "../components/Finalizar";
@@ -12,7 +14,7 @@ const Checkout = () => {
       <MetodoPago/> 
       <Finalizar/>
       <Confirmado/>
-      {/* <Comentarios/> */}
+      <Comentarios/>
     </div>
   );
 };
