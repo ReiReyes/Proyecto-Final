@@ -18,6 +18,8 @@ const LoginForm = () => {
         "Reinaldo@Molokai.com","Juan@Molokai.com","Andres@Molokai.com",
         "Luis@Molokai.com","Carlos@Molokai.com"
     ]
+    //Contraseña de Admin: Molokai2021
+    
     const [isAdmin, setIsAdmin] = useState(false);
 
     //se encarga del login
@@ -27,11 +29,14 @@ const LoginForm = () => {
             await signInWithEmailAndPassword(auth, email, password);
             console.log('Usuario Loggeado correctamente!')
             toast.success("Usuario loggeado correctamente!",{
-                position: "top-center",
-              });
+                position: "top-center",});
+                
             //pagina a la que manda despues del login
             window.location.href='/LandingPage';
-            
+            {/*if (adminCorreo.includes(email)) {
+              setIsAdmin(true);
+              console.log('Usuario es Admin')
+            } */}
         } catch (error) {
             console.log(error.message);
             toast.error(error.message, {
@@ -59,6 +64,10 @@ const LoginForm = () => {
             position: "top-center",
           });
           window.location.href = "/LandingPage";
+          {/*if (adminCorreo.includes(email)) {
+              setIsAdmin(true);
+              console.log('Usuario es Admin')
+            } */}
         }
       });
     }
