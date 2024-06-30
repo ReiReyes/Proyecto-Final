@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-    <AdminPromo/>
+    <Profile_Sec/>
     </>
   )
 }
