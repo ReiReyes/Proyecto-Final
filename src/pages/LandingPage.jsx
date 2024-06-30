@@ -3,6 +3,9 @@ import Header from '../components/Header';
 import Banner from '../components/Banner';
 import MenuSection from '../components/MenuSection';
 import BuildYourPoke from '../components/BuildYourPoke';
+import ContactSection from '../components/contactSection';
+import Comments from '../components/comments';
+// import Footer from '../components/Footer';
 
 function LandingPage() {
   return (
@@ -11,6 +14,9 @@ function LandingPage() {
         <Banner/>
         <MenuSection/>
         <BuildYourPoke/>
+        <ContactSection/>
+        <Comments/>
+        {/* <Footer/> */}
     </div>
   );
 }

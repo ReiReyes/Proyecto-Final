@@ -1,263 +1,205 @@
-/* Nosotros */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
 .p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
   position: relative;
-  top: -650px;
+}
+
+.barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #29ccba;
+  width: 104%;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.SN {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-left: -900px;
+}
+
+.descripcionSN {
+  color: black;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  margin-left: -500px;
+}
+
+.imagenSN {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  right: 150px;
+  bottom: -15px;
+}
+
+.img {
+  position: relative;
+  width: 104%;
+  height: 0;
+}
+
+.imagenHoja {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 170px;
+  height: 270px;
+}
+
+.MV {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.misionCompleta,
+.visionCompleta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.misionCompleta {
+  margin-right: -10rem;
+}
+
+.mision,
+.vision {
+  color: #f8646c;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.descripcionMision,
+.descripcionvision {
+  color: black;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.imagenMision,
+.imagenVision {
+  width: 350px;
+  height: 350px;
+  margin-bottom: 2rem;
+}
+
+.imgs {
+  position: relative;
+  width: 104%;
+  height: 0;
+}
+.planta2 {
+  position: absolute;
+  width: 200px;
+  height: 235px;
+  top: -235px;
+  left: 88.1%;
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1459px) {
+  .planta2 {
+    display: none;
   }
 
-  .SN {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100px;
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-    line-height: 30px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-    text-align: justify;
-    margin-right: 50%;
-    margin-left: 10%;
-    margin-top: 50%;
-  }
-
-  .descripcionSN {
-    color: rgba(0, 0, 0, 1);
-    font-size: 25px;
-    line-height: 30px;
-    font-family: Poppins, sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    margin-right: 60%;
-    margin-left: 10%;
-    height: 250px;
-  }
-
-  .mision {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 80px;
-    color: #f8646c;
-    font-size: 30px;
-    line-height: 30px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-    text-align: center;
-    margin-right: 55%;
-    margin-left: 15%;
-    margin-top: 10%;
-    position: relative;
-    top: -80px;
-  }
-
-  .descripcionMision {
-    color: rgba(0, 0, 0, 1);
-    font-size: 25px;
-    line-height: 30px;
-    font-family: Poppins, sans-serif;
-    font-style: italic;
-    text-align: center;
-    font-weight: 400;
-    margin-right: 55%;
-    margin-left: 15%;
-    position: relative;
-    top: -80px;
-  }
-
-  .vision {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 80px;
-    color: #f8646c;
-    font-size: 30px;
-    line-height: 30px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-    text-align: center;
-    margin-right: 20%;
-    margin-left: 50%;
-    margin-top: 5%;
-    position: relative;
-    top: -180px;
-
-  }
-
-  .descripcionvision {
-    color: rgba(0, 0, 0, 1);
-    font-size: 25px;
-    line-height: 30px;
-    font-family: Poppins, sans-serif;
-    font-style: italic;
-    text-align: center;
-    font-weight: 400;
-    margin-right: 20%;
-    margin-left: 50%;
-    margin-top: -5%;
-    position: relative;
-    top: -80px;
-  }
-
-  .imagenMision {
-    position: relative;
-    top: -60px;
-    width: 421px;
-    height: 413px;
-    margin-top: -15%;
-    margin-left: 55%;
-    top: -110px;
-  }
-
-  .imagenVision {
-    position: relative;
-    width: 440px;
-    height: 413px;
-    margin-top: 10%;
-    margin-left: 20%;
-    top: -600px;
+  .imagenHoja {
+    display: none;
   }
 
   .barra {
-    background-color: #29ccba;
-    justify-content: space-between;
+    width: 100%;
+  }
+
+  .SN {
+    margin-left: 0;
+  }
+
+  .descripcionSN {
+    margin-left: 0;
+    max-width: 100%;
   }
 
   .imagenSN {
-    width: 350px;
-    height: 350px;
-    margin-top: -15.5%;
-    margin-left: 60%;
-  }
-  .planta1 {
-    width: 200px;
-    height: 235px;
-    margin-top: -5%;
+    position: static;
+    margin-top: 2rem;
   }
 
-  .planta2 {
-    width: 200px;
-    height: 235px;
-    transform: rotate(180deg);
-    position: absolute;
-    right: 0;
+  .misionCompleta {
+    margin-right: 0;
   }
 
-@media (max-width: 1500px) {
-  .p {
-    position: relative;
-    top: -300px;
-    }
-
-  .imagenMision {display: none;}
-  .imagenVision {display: none;}
-
-  .vision{
-    margin-left: 20%;
-    margin-top: 10%;
+  .MV {
+    flex-direction: column;
   }
-  .descripcionvision{
-    margin-left: 15%;
-    margin-top: 10%;
-    position: relative;
-    top: -300px;
-  }
-
-  .mision{
-    margin-left: 46%;
-    margin-top: 10%;
-  }
-
-  .descripcionMision{
-    margin-left: 15%;
-    margin-right: 20%;
-  }
-  
-  .planta2 {
-    width: 200px;
-    height: 235px;
-    transform: rotate(180deg);
-    position: absolute;
-    right: 0;
-  }
-
-  .planta2 {display: none;}
 }
 
-@media (max-width: 900px) {
-  .p {
-    position: relative;
-    top: -50px;
-    }
+@media (max-width: 480px) {
 
-    .barra {
-      background-color: #29ccba;
-      justify-content: space-between;
-      width: 100%;
-    }
+  .p{
+    top: 20px;
+  }
 
-    .barra {
-        width: 100%;
-        height: 400px;
-    }
-    
-    .descripcionSN {
-      margin-right: 10%;
-      margin-left: 10%;
-      height: 200px;
-    }
-    
-    .imagenSN {
-      width: 0px;
-      height: 0px;
-    }
+  .SN {
+    font-size: 25px;
+  }
 
-    .mision {
-      text-align: center;
-      margin-left: 45%;
-      margin-top: 10%;
-      position: relative;
-      top: -60px;
-    }
+  .descripcionSN {
+    font-size: 20px;
+  }
 
-    .descripcionMision {
-      margin-right: 35%;
-      margin-left: -15%;
-      margin-top: 5%;
-      position: relative;
-      top: -60px;
-      left: 180px;
-    }
+  .imagenSN {
+    width: 300px;
+    height: 300px;
+  }
 
-    .imagenMision {display: none;
-    }
+  .mision,
+  .vision {
+    font-size: 25px;
+  }
 
-    .vision {
-      margin-right: 35%;
-      margin-left: 40%;
-      margin-top: 5%;
-      position: relative;
-      top: 0px;
-  
-    }
+  .descripcionMision,
+  .descripcionvision {
+    font-size: 20px;
+  }
 
-    .descripcionvision {
-
-      margin-left: -15%;
-      margin-right: 35%;
-      margin-top: -5%;
-      position: relative;
-      top: 80px;
-      left: 180px;
-    }
-
-    .imagenVision {display: none;
-    }
-
-    .planta2 {
-      position: absolute;
-      right: 0%;
-    }
+  .imagenMision,
+  .imagenVision {
+    width: 300px;
+    height: 300px;
+  }
 }

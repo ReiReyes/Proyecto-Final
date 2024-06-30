@@ -1,5 +1,4 @@
 /* .barraF {
-  margin-top: -38%;
   background-color: #3f4e91;
   justify-content: space-between;
   width: 100%;
@@ -8,10 +7,10 @@
 
   .logoM {
     position: relative;
-    top: 110px;
+    top: 150px;
     width: 100px;
     height: 100px;
-    margin-top: 0%;
+    margin-top: -3%;
     margin-left: 5%;
   }
 
@@ -26,10 +25,10 @@
 
   .contactoTexto {
     position: relative;
-    top: -10px;
+    top: -1px;
     font-size: 20px;
     color: white;
-    top: -60px;
+    top: -65px;
     margin-top: 1.5%;
     margin-left: 20%;
     transform: translate(-0%, 150%);
@@ -71,7 +70,7 @@
     color: white;
     font-size: 20px;
     width: 200px;
-    margin-left: 48%;
+    margin-left: 50%;
     margin-top: -5%;
     transform: translate(-35%, 100%);
   }
@@ -111,7 +110,7 @@
     color: white;
     font-size: 20px;
     margin-left: 66%;
-    margin-top: -6%;
+    margin-top: -7%;
     transform: translate(0%, 200%);
   }
 
@@ -119,7 +118,7 @@
     color: white;
     font-size: 15px;
     margin-left: 64%;
-    margin-top: 3%;
+    margin-top: 4%;
   }
 
   .unimet {

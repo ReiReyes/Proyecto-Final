@@ -1,300 +1,146 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 
 .p {
   position: relative;
   margin-top: 5%;
-  }
-  .comentariosDestacados {
-    color: white;
-    line-height: 50px;
-    font-size: 30px;
-    text-align: center;
-    margin-top: -20%;
-  }
+  text-align: center;
+}
 
-  .barraC {
-    background-color: #29ccba;
-    justify-content: space-between;
-  }
+.barraC {
+  background-color: #00d1b2;
+  padding: 8px 0;
+  width: 104%;
+  margin-top: -10%;
+}
 
-  .comentario1 {
-    margin-left: 15%;
-    margin-top: 2%;
-  }
+.comentariosDestacados {
+  color: #ffffff;
+  line-height: 50px;
+  font-size: 33px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+}
 
-  .comentario2 {
-    position: relative;
-    top: -235px;
-    margin-left: 42%;
-    margin-top: -2.5%;
-  }
+.comentariosContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
 
-  .comentario3 {
-    position: relative;
-    top: -470px;
-    margin-left: 69%;
-    margin-top: -2.5%;
-  }
+.comentario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
 
-  .perfil1 {
-    position: relative;
-    top: 40px;
-    width: 60px;
-    border-radius: 50%;
-    background-color: #f8646c;
-  }
+.perfilf {
+  width: 60px;
+  border-radius: 50%;
+  background-color: #f8646c;
+}
 
-  .nombre1 {
-    position: relative;
-    color: black;
-    top: -20px;
-    margin-left: 6%;
-    font-size: 25px;
-  }
+.nombre {
+  color: black;
+  font-size: 25px;
+  margin-top: 0.5rem;
+}
 
-  .star1 {
-    position: relative;
-    top: -40px;
-    margin-left: 5.5%;
-    font-size: 25px;
-    width: 150px;
-  }
+.star {
+  font-size: 25px;
+  width: 150px;
+  margin-top: 0.5rem;
+}
 
-  .nombre2 {
-    position: relative;
-    color: black;
-    top: -20px;
-    margin-left: 9%;
-    font-size: 25px;
-  }
+.cajadecomentarios {
+  width: 400px;
+  height: 100px;
+  border: 1px solid rgba(63, 132, 124, 1);
+  box-sizing: border-box;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    ),
+    url(https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/xbko98jba5-607%3A1131?alt=media&token=7bb11a8e-7978-4f34-8612-34e7326bb064);
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
 
-  .star2 {
-    position: relative;
-    top: -40px;
-    margin-left: 8.5%;
-    font-size: 25px;
-    width: 150px;
-  }
+.comentarioTexto {
+  padding: 10px;
+  color: rgb(80, 80, 80);
+  font-size: 15px;
+  line-height: 15px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+}
 
-  .nombre3 {
-    position: relative;
-    color: black;
-    top: -20px;
-    margin-left: 18%;
-    font-size: 25px;
-  }
+.container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  max-width: 1685px;
+  margin: 0 auto;
+  top: 60px;
+}
 
-  .star3 {
-    position: relative;
-    top: -40px;
-    margin-left: 17.5%;
-    font-size: 25px;
-    width: 150px;
-  }
+.imagenOrdenaYa {
+  width: 104%;
+  display: block;
+  height: 300px;
+}
 
-  .cajadecomentarios {
-    position: relative;
-    top: -30px;
-    width: 400px;
-    height: 100px;
-    border: 1px solid rgba(63, 132, 124, 1);
-    box-sizing: border-box;
-    background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 1),
-        rgba(255, 255, 255, 1)
-      ),
-      url(https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/xbko98jba5-607%3A1131?alt=media&token=7bb11a8e-7978-4f34-8612-34e7326bb064);
-    border-radius: 10px;
-  }
+.contornoOrdenaYa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 100, 108, 1);
+  border-radius: 20px;
+  width: 250px;
+  height: 65px;
+  box-sizing: border-box;
+}
 
-  .comentario {
-    top: 10px;
-    left: 10px;
-    position: relative;
-    color: rgb(80, 80, 80);
-    font-size: 15px;
-    line-height: 15px;
-    font-family: Poppins, sans-serif;
-    font-weight: 400;
-  }
-
-  /* Ordena Ya */
-  /* .imagenOrdenaYa {
-    margin-top: -20%;
-    width: 100%;
-  }
-
-  .contornoOrdenaYa {
-    position: relative;
-    top: -150px;
-    margin-left: 44%;
-    width: 320px;
-    height: 75px;
-    padding: 17px 95px 34px;
-    box-sizing: border-box;
-    background: linear-gradient(
-        0deg,
-        rgba(248, 100, 108, 1),
-        rgba(248, 100, 108, 1)
-      ),
-      url(https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/3hnpymujaue-607%3A1177?alt=media&token=41c362e5-e333-4a36-b1f0-5c0a1bb54cd4);
-    border-radius: 20px;
-  }
-
-  .ordenaYa {
-    
-    position: relative;
-    top: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: rgba(255, 255, 255, 1);
-    font-size: 24px;
-    line-height: 24px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-    text-align: center;
-  }
-
+.ordenaYa {
+  color: white;
+  font-size: 23px;
+  font-family: Poppins, sans-serif;
+}
 
 @media (max-width: 1500px) {
-
-  
-  .comentario1 {
-    margin-left: 35%;
-    margin-top: 2%;
-  }
-
-  .comentario3,
-  .comentario2 {
-    position: relative;
-    margin-left: 35%;
-    margin-top: 8%;
-  }
-
-  .comentario3 {
-    position: relative;
-    top: -220px;
-  }
-
-  .comentario2 {
-    position: relative;
-    top: -110px;
-  }
-
-  .nombre3,
-  .nombre2,
-  .nombre1 {
-    position: relative;
-    color: black;
-    top: -20px;
-    margin-left: 15%;
-    font-size: 25px;
-  }
-
-  .star3,
-  .star2,
-  .star1 {
-    position: relative;
-    top: -40px;
-    margin-left: 15%;
-    font-size: 25px;
-    width: 150px;
-  }
-
-  
-  .contornoOrdenaYa {
-    position: relative;
-    top: -100px;
-    margin-left: 40%;
-    width: 320px;
-    height: 75px;
-    padding: 17px 95px 34px;
-    box-sizing: border-box;
-    background: linear-gradient(
-        0deg,
-        rgba(248, 100, 108, 1),
-        rgba(248, 100, 108, 1)
-      ),
-      url(https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/3hnpymujaue-607%3A1177?alt=media&token=41c362e5-e333-4a36-b1f0-5c0a1bb54cd4);
-    border-radius: 20px;
+  .comentariosContainer {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 900px) {
-
-  .barraC {
-    background-color: #29ccba;
-    justify-content: space-between;
+@media (max-width: 1000px) {
+  .imagenOrdenaYa {
+    height: 200px;
   }
-  
-  .p {
-    position: relative;
-    top: -700px;
-    margin-top: 100%;
-    }
+}
 
-    .comentario1 {
-      margin-left: 35%;
-      margin-top: 2%;
-    }
+@media (max-width: 480px) {
+  .comentariosDestacados {
+    font-size: 28px;
+  }
 
-
-    .comentario3 {
-      position: relative;
-      top: 10px;
-    }
-
-    .comentario2 {
-      position: relative;
-      top: 10px;
-    }
-
-    .nombre3,
-    .nombre2,
-    .nombre1 {
-      position: relative;
-      color: black;
-      top: -20px;
-      left: 50px;
-      margin-left: 10%;
-      font-size: 25px;
-    }
-    .star3,
-    .star2,
-    .star1 {
-      position: relative;
-      top: -40px;
-      margin-left: 25%;
-      font-size: 25px;
-      width: 150px;
-    }
-
-  /* Ordena Ya */
-  /* .imagenOrdenaYa {
-    position: relative;
-    top: 100px;
-    margin-bottom: 60%;
-    width: 840px;
+  .imagenOrdenaYa {
+    height: 150px;
   }
 
   .contornoOrdenaYa {
-    position: relative;
-    top: 50px;
-    margin-left: 35%;
-    width: 320px;
-    height: 75px;
-    padding: 17px 95px 34px;
-    box-sizing: border-box;
-    background: linear-gradient(
-        0deg,
-        rgba(248, 100, 108, 1),
-        rgba(248, 100, 108, 1)
-      ),
-      url(https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/3hnpymujaue-607%3A1177?alt=media&token=41c362e5-e333-4a36-b1f0-5c0a1bb54cd4);
-    border-radius: 20px;
-    z-index: 1;
+    width: 150px;
+    height: 55px;
   }
-} */ 
+
+  .ordenaYa {
+    font-size: 18px;
+  }
+}
