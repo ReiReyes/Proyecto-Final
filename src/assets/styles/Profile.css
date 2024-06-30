@@ -38,7 +38,7 @@ height: auto;
 position: absolute;
 max-width: 20vh;
 left: 62%;
-top: 62%;
+top: 69%;
 height: auto;
 }
 
@@ -71,21 +71,8 @@ height: auto;
 }
 
 
-.profile_save_button {
-  height: 60px;
-  width: 30vh;
-  background-color: #ff6b6b;
-  outline: none;
-  border: 2px solid #ff6b6b;
-  border-radius: 10px;
-  font-family: "poppins", sans-serif; 
-  font-size: 1.6vw;
-  color:#ffffff;
-  margin-left: 10vh;
-}
 
 .profile_save_button_responsive {
-    display: none;
     color: #000000;
     background-color: #ff6b6b;
     border: 2px solid #ff6b6b;
@@ -94,19 +81,16 @@ height: auto;
     text-align: left;
     border-radius: 8px;
     font-size: 1.6vw;
+    text-align: center;
 }
 
 @media only screen and (max-width: 1024px){
 
-.profile_save_button {
-    display: none;
-}
 
 .profile_save_button_responsive {
     display: block;
     font-size: 1.2em;
     margin-top: 1.2vh;
-    text-align: center;
 }
 
 .bodyProfile {

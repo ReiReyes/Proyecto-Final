@@ -61,7 +61,6 @@ function Profile() {
           <div className='User_Profile'>
             <img className="Img_user" src={ImgUser} alt="User" />
             <img className="Img_change" src={change_pfp} alt="Change" />
-            <button type="submit" className='profile_save_button'>Guardar Cambios</button>
           </div>
           <div className='container_user_options'>
             <h2 className='titulo_profile'>Nombre</h2>
