@@ -85,6 +85,15 @@
   height: 300px;
 }
 
+@media (max-width: 1164px) {
+
+  .leafc {
+    display: none;
+    
+  }
+}
+
+
 @media (max-width: 950px) {
   .search-poke {
     padding: 10px 20px;
@@ -115,6 +124,11 @@
 }
 
 @media (max-width: 790px) {
+
+  .search-poke {
+    padding: 10px 20px;
+    width: 400px;
+  }
   .section {
     flex-direction: column;
     align-items: center;
@@ -128,22 +142,7 @@
 
 @media (max-width: 480px) {
   .search-poke {
-    flex-direction: column;
-    padding: 10px 10px;
-  }
-
-  .cta {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .arrow-btn {
-    width: 40px;
-    height: 40px;
-  }
-
-  .arrow-btn img {
-    width: 30px;
-    height: 30px;
+    padding: 10px 30px;
+    width: 350px;
   }
 }

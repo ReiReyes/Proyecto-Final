@@ -19,10 +19,7 @@ const MenuSection = () => {
         <h1>BOWL Ó BURRITO</h1>
       </header>
       <br />
-      <br />
       <div className="carousel">
-        <button className="arrow left-arrow">{"<"}</button>
-
         <div className="cards-container">
           <div className="card f">
             <img src={mololove} alt="Mololove" />
@@ -65,11 +62,8 @@ const MenuSection = () => {
             <div className="more-icon">+</div>
           </div>
         </div>
-
-        <button className="arrow right-arrow">{">"}</button>
       </div>
       <button className="view-menu-btn">Ver Menú</button>
-
       <div className="leaf-container">
         <img src={leafImage} alt="Leaf" className="leaf" />
       </div>
