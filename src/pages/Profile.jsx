@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { auth, db } from "./firebase";
+import React, { useEffect, useRef, useState } from "react";
+import { auth, db, storage } from "./firebase"; // Ensure you import storage from Firebase
 import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import '../assets/styles/Profile.css';
 import Header from '../components/Header-p';
 import ImgUser from '../assets/imgs/imgUser/no_perfil.png';
@@ -8,10 +9,12 @@ import change_pfp from '../assets/imgs/imgUser/change_pfp.png';
 
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
+  const [profilePic, setProfilePic] = useState(ImgUser);
   const [telf, setTelf] = useState("");
   const [rol, setRol] = useState("");
   const [name, setName] = useState("");
   const [last_name, setLast_name] = useState("");
+  const fileInputRef = useRef(null);
 
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
@@ -25,8 +28,11 @@ function Profile() {
           setRol(data.rol || "");
           setName(data.nombre || "");
           setLast_name(data.apellido || "");
+          if (data.photo) {
+            setProfilePic(data.photo);
+          }
         } else {
-          console.log("Usuario no esta loggeado");
+          console.log("Usuario no está loggeado");
         }
       }
     });
@@ -38,7 +44,6 @@ function Profile() {
 
   const handleSave = async (event) => {
     event.preventDefault();
-    console.log("HandleSave called");
     const change = doc(db, "Users", auth.currentUser.uid);
     await updateDoc(change, {
       nombre: name,
@@ -46,7 +51,20 @@ function Profile() {
       rol: rol,
       telefono: telf,
     });
-    console.log("Changes saved");
+    console.log("Cambios guardados");
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const storageRef = ref(storage, `profilePics/${auth.currentUser.uid}`);
+      await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(storageRef);
+      setProfilePic(downloadURL);
+      await updateDoc(doc(db, "Users", auth.currentUser.uid), {
+        photo: downloadURL,
+      });
+    }
   };
 
   if (!userDetails) {
@@ -59,8 +77,14 @@ function Profile() {
         <div className='bodyProfile'>
           <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
           <div className='User_Profile'>
-            <img className="Img_user" src={ImgUser} alt="User" />
-            <img className="Img_change" src={change_pfp} alt="Change" />
+            <img className="Img_user" src={profilePic} alt="User" />
+            <img className="Img_change" src={change_pfp} alt="Change" onClick={() => fileInputRef.current.click()} />
+            <input
+              type="file"
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              onChange={handleImageUpload}
+            />
           </div>
           <div className='container_user_options'>
             <h2 className='titulo_profile'>Nombre</h2>
