@@ -12,7 +12,8 @@ const Change_Pass= ({ show, handleClose, children }) => {
           {children}
         </div>
         <div className="popup-footer">
-          <button onClick={handleClose} className="button close-button">Close</button>
+          <button onClick={handleClose} className="popup-close-button">Close</button>
+
         </div>
       </div>
     </div>

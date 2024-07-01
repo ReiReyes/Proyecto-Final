@@ -142,10 +142,11 @@ const handleModalOpen = () => setShowModal(true);
               type="password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              className="item_profile"
+              className="password_change_input"
             />
           </div>
           <button type="submit" className="password_change_button">Guardar</button>
+
         </form>
       </Change_Pass>
     </>

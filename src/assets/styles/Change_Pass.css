@@ -26,20 +26,26 @@
   text-align: center; /* Center align text */
 }
 
+.popup-title {
+    font-size: 1.7em;
+    color: #29CCBA;
+    font-weight: 600;
+}
+
 .popup-header, .popup-footer {
   padding: 1rem 0;
 }
 
-input {
-  width: 100%;
-  padding: 0.5rem;
+.password_change_input {
+  width: 80%;
+  padding: 1rem;
   margin: 1rem 0;
   box-sizing: border-box; /* Ensure padding is included in the total width */
   border: 2px solid #17c3b2; /* Add border color to match the theme */
   border-radius: 5px; /* Add border radius to match the theme */
 }
 
-.close-button {
+.popup-close-button {
   background-color: #ff6b6b;
   border: none;
   color: white;
