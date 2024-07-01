@@ -51,19 +51,24 @@ function Profile() {
       rol: rol,
       telefono: telf,
     });
-    console.log("Cambios guardados");
+    console.log("Changes saved");
   };
 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      const storageRef = ref(storage, `profilePics/${auth.currentUser.uid}`);
-      await uploadBytes(storageRef, file);
-      const downloadURL = await getDownloadURL(storageRef);
-      setProfilePic(downloadURL);
-      await updateDoc(doc(db, "Users", auth.currentUser.uid), {
-        photo: downloadURL,
-      });
+      try {
+        const storageRef = ref(storage, `profilePics/${auth.currentUser.uid}`);
+        await uploadBytes(storageRef, file);
+        const downloadURL = await getDownloadURL(storageRef);
+        setProfilePic(downloadURL);
+        await updateDoc(doc(db, "Users", auth.currentUser.uid), {
+          photo: downloadURL,
+        });
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        alert("Error uploading file. Please try again.");
+      }
     }
   };
 
@@ -77,7 +82,9 @@ function Profile() {
         <div className='bodyProfile'>
           <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
           <div className='User_Profile'>
-            <img className="Img_user" src={profilePic} alt="User" />
+            <div className="Img_user_container">
+              <img className="Img_user" src={profilePic} alt="User" />
+            </div>
             <img className="Img_change" src={change_pfp} alt="Change" onClick={() => fileInputRef.current.click()} />
             <input
               type="file"

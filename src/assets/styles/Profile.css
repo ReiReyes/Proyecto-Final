@@ -22,25 +22,44 @@
     padding-top: 60px; 
 }
 
+/* Other existing styles */
+
 .User_Profile {
-position: relative;
-margin-top: 10vh;   
-margin-right: 20%;   
-right: 20px;
+  position: relative;
+  margin-top: 10vh;   
+  margin-right: 20%;   
+  right: 20px;
+}
+
+.Img_user_container {
+  width: 70vh; 
+  height: 70vh; 
+  overflow: hidden; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #f0f0f0;
 }
 
 .Img_user {
-position: relative;
-max-width: 80vh;
-height: auto;
+  width: 100%; /* Ensure the image covers the container width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the container area */
 }
-.Img_change{
-position: absolute;
-max-width: 20vh;
-left: 62%;
-top: 69%;
-height: auto;
+
+.Img_change {
+  position: absolute;
+  max-width: 20vh;
+  left: 62%;
+  top: 69%;
+  height: auto;
+  background-color: white;
+  border-radius: 32px;
 }
+
+/* Other existing styles */
+
 
 .container_user_options{
     margin-top: 10vh;
