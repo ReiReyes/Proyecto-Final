@@ -1,8 +1,33 @@
 import { useState } from 'react';
 import '../assets/styles/Profile_Sec.css';
 import Header from '../components/Header-p';
+import Change_Pass from '../components/Change_Pass'
+import { updatePassword } from 'firebase/auth';
+import { auth, db } from "./firebase";
+
 
 function Profile_Sec() {
+
+  const [newPassword, setNewPassword] = useState("");
+const [showModal, setShowModal] = useState(false);
+
+const handleModalOpen = () => setShowModal(true);
+  const handleModalClose = () => setShowModal(false);
+
+  const handleChangePassword = async (event) => {
+    event.preventDefault();
+    if (newPassword.length < 6) {
+      return;
+    }
+    try {
+      await updatePassword(auth.currentUser, newPassword);
+      setShowModal(false);
+    } catch (error) {
+      console.error("Error updating password: ", error);
+    }
+  };
+
+
 
   const [cards] = useState([
     {
@@ -65,7 +90,7 @@ function Profile_Sec() {
                 <div key={i} className='cards'>
                   <h3 className='titles_security'>{card.title}</h3>
                   <div className='card'>
-                    <button className='cards_button'>{card.text}</button>
+                    <button className='cards_button' onClick={handleModalOpen}>{card.text}</button>
                   </div>
                 </div>
               ))}
@@ -110,6 +135,20 @@ function Profile_Sec() {
           </div>
         </section>
       </div>
+      <Change_Pass show={showModal} handleClose={handleModalClose}>
+        <form onSubmit={handleChangePassword}>
+          <div>
+            <label>Nuevo Password</label>
+            <input
+              type="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              className="item_profile"
+            />
+          </div>
+          <button type="submit" className="button">Guardar</button>
+        </form>
+      </Change_Pass>
     </>
   );
 }
