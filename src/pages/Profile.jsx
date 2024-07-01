@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { auth, db, storage } from "./firebase"; // Ensure you import storage from Firebase
+import { auth, db, storage } from "./firebase"; 
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import '../assets/styles/Profile.css';
