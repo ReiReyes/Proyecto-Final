@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment-timezone'; // npm install moment-timezone
 import "../assets/styles/Finalizar.css";
-import exit from "../assets/images/imgDetalles/Exit.png";
+import exit from "../assets/imgs/imgDetalles/Exit.png";
 
 const Checkout = () => {
   const [horaVenezuela, setHoraVenezuela] = useState('');

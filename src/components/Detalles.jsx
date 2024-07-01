@@ -1,6 +1,6 @@
 import "../assets/styles/Detalles.css";
-import exit from "../assets/images/imgDetalles/Exit.png";
-import delivery from "../assets/images/imgDetalles/imagenDelivery.png";
+import exit from "../assets/imgs/imgDetalles/Exit.png";
+import delivery from "../assets/imgs/imgDetalles/imagenDelivery.png";
 
 
 

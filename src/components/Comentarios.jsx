@@ -1,6 +1,6 @@
 import "../assets/styles/Comentarios.css"; 
-import exit from "../assets/images/imgDetalles/Exit.png";
-import molo from "../assets/images/imgComentarios/comentariosMolokai.png";
+import exit from "../assets/imgs/imgDetalles/Exit.png";
+import molo from "../assets/imgs/imgComentarios/comentariosMolokai.png";
 
 
 const Checkout = () => {

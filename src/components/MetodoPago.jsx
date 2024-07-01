@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import "../assets/styles/MetodoPago.css"; 
-import exit from "../assets/images/imgDetalles/Exit.png";
-import paypal from "../assets/images/imgMetodoPago/PayPal.png";
-import debito from "../assets/images/imgMetodoPago/Debito.png";
+import exit from "../assets/imgs/imgDetalles/Exit.png";
+import paypal from "../assets/imgs/imgMetodoPago/PayPal.png";
+import debito from "../assets/imgs/imgMetodoPago/Debito.png";
 
 const Checkout = () => {
 
