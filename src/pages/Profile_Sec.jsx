@@ -138,7 +138,6 @@ const handleModalOpen = () => setShowModal(true);
       <Change_Pass show={showModal} handleClose={handleModalClose}>
         <form onSubmit={handleChangePassword}>
           <div>
-            <label>Nuevo Password</label>
             <input
               type="password"
               value={newPassword}
@@ -146,7 +145,7 @@ const handleModalOpen = () => setShowModal(true);
               className="item_profile"
             />
           </div>
-          <button type="submit" className="button">Guardar</button>
+          <button type="submit" className="password_change_button">Guardar</button>
         </form>
       </Change_Pass>
     </>

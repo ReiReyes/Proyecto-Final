@@ -8,6 +8,8 @@
   display: none;
   justify-content: center;
   align-items: center;
+  padding: 1rem; /* Add padding to ensure content doesn't touch the screen edges on small devices */
+  box-sizing: border-box; /* Ensure padding is included in the total width/height */
 }
 
 .popup.show {
@@ -21,10 +23,20 @@
   width: 80vw;
   max-width: 30rem;
   box-sizing: border-box;
+  text-align: center; /* Center align text */
 }
 
 .popup-header, .popup-footer {
   padding: 1rem 0;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+  border: 2px solid #17c3b2; /* Add border color to match the theme */
+  border-radius: 5px; /* Add border radius to match the theme */
 }
 
 .close-button {
@@ -33,6 +45,7 @@
   color: white;
   padding: 1rem 2rem;
   border-radius: 5px;
+  font-size: 1.2em;
   cursor: pointer;
 }
 

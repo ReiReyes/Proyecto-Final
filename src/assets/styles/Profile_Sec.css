@@ -156,3 +156,17 @@ height: 60px;
     font-size: 1em;
     margin-top: 2vh;
 }
+
+.password_change_button {  
+  color:#ffffff;
+  background-color: #29CCBA;
+  border: 2px solid #29CCBA;
+  border-radius: 10px;
+  font-family: "poppins", sans-serif; 
+  font-size: 1.2vw;
+  padding: 10px 20px 10px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: .3s;
+
+}
