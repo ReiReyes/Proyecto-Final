@@ -112,11 +112,8 @@
   color: white;
   font-size: 23px;
   font-family: Poppins, sans-serif;
+  cursor: pointer;
 }
-
-
-
-
 
 @media (max-width: 1280px) {
   .imagenOrdenaYa {
