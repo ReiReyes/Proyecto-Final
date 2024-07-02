@@ -15,7 +15,7 @@
 
 .header-s {
     width: 100%;
-    position: fixed; /* Fija el header en la parte superior de la pantalla */
+    position: fixed; 
     top: 0; 
     z-index: 10;
     margin-left: 0px;
@@ -73,5 +73,4 @@
   .logoMolokai-s img {
     max-width: 140px;
   }
-  
   

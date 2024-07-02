@@ -1,5 +1,5 @@
 import React from "react";
-
+import './Entradas.css';
 import "../../assets/styles/header.css";
 import Header from "../../components/Header.jsx";
 import Navbar from "../../components/Navbar.jsx";
@@ -17,9 +17,12 @@ const Entradas = () => {
             <div className="nav-menu"><Navbar /></div>
 
             <div className="products">
-                {PRODUCTS.filter(product => product.productType === "entrada").map((product) => (
-                    <Product key={product.id} data={product} />
+                {PRODUCTS.map((product) => (
+                    <Product data={product}/>
                 ))}
+                {products.map((product) =>(
+                            <Product data={product} />
+                        ))}
 
             </div>
             </div>
