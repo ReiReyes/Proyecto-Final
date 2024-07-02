@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import addbutton from '../../assets/imgs/imgProduct/addbutton.png'
 import {ShopContext} from '../../context/shop-context'
-import './Entradas.css';
+
 
 export const Product = (props) => {
   

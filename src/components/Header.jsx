@@ -39,7 +39,7 @@ const Header = () => {
           </div>
           <nav ref= {navRef} className="menu">
 
-            <a href="/home">INICIO</a>
+            <a href="/LandingPage">INICIO</a>
             <a href="/about">NOSOTROS</a>
             <a className ="pedidos"href="/Entradas">MENU</a>
             <a href="/Carro"> <LuShoppingBasket className= "shopcart" /></a>

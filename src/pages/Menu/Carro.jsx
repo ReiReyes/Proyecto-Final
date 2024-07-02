@@ -5,12 +5,18 @@ import { PRODUCTS } from "../../../products.js";
 import {ShopContext} from '../../context/shop-context'
 import {CartItem} from './cart-item.jsx'
 import backArrow from '../../assets/imgs/imgCarro/back.png'
-
+import { useEffect, useState } from 'react';
 
 const Carro = () => {
     const { cartItems, getTotalCartAmount } = useContext(ShopContext);
     const totalAmount = getTotalCartAmount();
 
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        setProducts(storedProducts);
+    }, []);
     return (
         
         <>  
@@ -22,6 +28,12 @@ const Carro = () => {
 
                 <div className="cart-items">
                     {PRODUCTS.map((product) => {
+                        if(cartItems[product.id] !== 0){
+                            return <CartItem data={product}/>
+                        }
+                    })}
+                    
+                     {products.map((product) => {
                         if(cartItems[product.id] !== 0){
                             return <CartItem data={product}/>
                         }

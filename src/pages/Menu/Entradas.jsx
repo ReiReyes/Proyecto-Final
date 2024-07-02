@@ -5,10 +5,16 @@ import Header from "../../components/Header.jsx";
 import Navbar from "../../components/Navbar.jsx";
 import { PRODUCTS } from '../../../products.js';
 import { Product } from "../Menu/Product.jsx";
+import { useEffect, useState } from 'react';
 
 
 const Entradas = () => {
-    
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        setProducts(storedProducts);
+    }, []);
 
     return (
         
@@ -20,6 +26,9 @@ const Entradas = () => {
                 {PRODUCTS.map((product) => (
                     <Product data={product}/>
                 ))}
+                {products.map((product) =>(
+                            <Product data={product} />
+                        ))}
 
             </div>
             </div>

@@ -68,7 +68,7 @@ function AdminHist() {
     return (
         <div className="bodyA">
             <Headerp
-                primero="Inicio" enlacep="home"
+                primero="Inicio" enlacep="LandingPage"
                 segundo="Gestionar Menú" enlaces="Manage-menu"
                 tercero="Gestionar Historial" enlacet="Manage-shop-record"
                 cuarto="Gestionar Promociones" enlacec="Manage-coupons"
