@@ -1,16 +1,21 @@
 import "../assets/styles/header.css";
 import logoMolokai from "../assets/imgs/imgHeader/Logo Molokai.png";
 import logoUnimet from "../assets/imgs/imgHeader/LogoUnimet.png";
-// import { useState } from "react";
+import { useState } from "react";
 import Usuario from "../assets/imgs/imgHeader/Usuario.png";
 import Barra from "../assets/imgs/imgHeader/Barra.png";
-
 import { LuShoppingBasket } from "react-icons/lu";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const Header = () => {
-  // const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true); // Estado de loggeo
+  const [isAdmin, setIsAdmin] = useState(true); // Estado de administrador
+
+  useEffect(() => {
+    setIsLogged(false);
+    setIsAdmin(false);
+  }, []);
 
   const navRef = useRef();
   const showNavbar = () => {
@@ -35,14 +40,30 @@ const Header = () => {
             <img src={logoUnimet} alt="Universidad Metropolitana" />
           </div>
           <div className="perfil">
-            <a className="registerh" href="/register">
-              Registrarse
-            </a>
-            <img src={Barra} alt="Separador" className="separator" />
-            <img src={Usuario} alt="Usuario" className="user-icon" />
-            <a className="loginh" href="/login">
-              Iniciar Sesión
-            </a>
+            {isLogged ? (
+              <>
+                {isAdmin ? (
+                  <a className="admin move-left" href="/admin">
+                    Admin
+                  </a>
+                ) : (
+                  <a className="perfil-link  move-left" href="/profile">
+                    Perfil
+                  </a>
+                )}
+              </>
+            ) : (
+              <>
+                <a className="registerh" href="/register">
+                  Registrarse
+                </a>
+                <img src={Barra} alt="Separador" className="separator" />
+                <img src={Usuario} alt="Usuario" className="user-icon" />
+                <a className="loginh" href="/login">
+                  Iniciar Sesión
+                </a>
+              </>
+            )}
           </div>
         </div>
 
@@ -62,7 +83,6 @@ const Header = () => {
               MENÚ
             </a>
             <a href="/cart">
-              {" "}
               <LuShoppingBasket className="shopcart" />
             </a>
             <button className="btn close-button" onClick={showNavbar}>

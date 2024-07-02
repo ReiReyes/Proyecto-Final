@@ -149,6 +149,14 @@
   font-size: 1.8rem;
 }
 
+.admin {
+  margin-left: -90px !important; 
+}
+
+.perfil-link {
+  margin-left: -90px !important; 
+}
+
 @media only screen and (max-width: 1024px) {
   .btn {
     display: contents;
