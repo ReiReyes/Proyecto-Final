@@ -41,8 +41,8 @@ const Header = () => {
 
             <a href="/home">INICIO</a>
             <a href="/about">NOSOTROS</a>
-            <a className ="pedidos"href="/menu">MENU</a>
-            <a href="/cart"> <LuShoppingBasket className= "shopcart" /></a>
+            <a className ="pedidos"href="/Entradas">MENU</a>
+            <a href="/Carro"> <LuShoppingBasket className= "shopcart" /></a>
             <button className="close-icon" onClick={showNavbar}><FaTimes/></button>
           </nav>
             <button className="menu-icon" onClick={showNavbar}><FaBars/></button>
