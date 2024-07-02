@@ -173,7 +173,7 @@ header h1 {
   }
 
   .card {
-    width: 240px; 
+    width: 240px;
     margin: 15px;
   }
 
@@ -186,9 +186,7 @@ header h1 {
   .leaf-container {
     display: none;
   }
-  
 }
-
 
 @media (max-width: 1020px) {
   .card {
@@ -247,4 +245,8 @@ header h1 {
   }
 }
 
-
+@media (max-width: 480px) {
+  .he {
+    font-size: 0.9em;
+  }
+}

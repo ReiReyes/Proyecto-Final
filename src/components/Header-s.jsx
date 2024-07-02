@@ -29,371 +29,211 @@
 
 
 
+// export default function FooterPrincipal() {
+//     return (
+//       <div className="barraF">
+//         <div>
+//           <img src={logoM} alt="Logo Molokai" className="logoM" />
+//         </div>
+//         <div className="an">
+//           <div className="contacto">
+//             <img src={contacto} alt="Contacto" className="contactoImg" />
+//             <p className="contactoTexto">CONTACTO</p>
+//           </div>
+  
+//           <div className="pago">
+//             <img src={info} alt="Contacto" className="info" />
+//             <p className="contactos">pagos@pokemolokai.com <br />
+//               0414-123-6105
+//             </p>
+//           </div>
+          
+//         </div>
+//         <div className="sigue">
+//           <div className="flex"> 
+//           <p className="siguenos"> Síguenos: </p>
+//           <div className="redesSociales">
+//             <img src={facebook} alt="Facebook" className="facebook"></img>
+//             <img src={twitter} alt="Twitter" className="twitter"></img>
+//             <img src={instagram} alt="Instagram" className="instagram"></img>
+//             <img src={linkedin} alt="Linkedin" className="linkedin"></img>
+//             <p className="copy">Copyright @2024 - All Right Reserved</p>
+//           </div>
+//           </div>
+//           <div>
+//             <img src={pin} alt="Acerca" className="pin" />
+//             <p className="acercade">ACERCA DE</p>
+//             <p className="creador">Creado por: José García</p>
+//           </div>
+//           <div>
+//             <img src={logoUnimet} alt="Unimet" className="unimet" />
+//           </div>
+//           <div className="line-1" />
+//           <div className="line-2" />
+//         </div>
+//       </div>
+//     );
+//   }
+  
 
-
-
-
-
-
-
-
-// * {
-//     margin: 0;
-//     padding: 0;
+// .barraF {
+//     background-color: #3f4e91;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+//     align-items: center;
+//     width: 100%;
+//     /* height: 400px; */
+//     padding: 20px;
 //     box-sizing: border-box;
-//     font-family: "Inter", sans-serif;
 //   }
   
-//   .header {
-//     width: 100%;
-//     position: fixed; /* Fija el header en la parte superior de la pantalla */
-//     top: 0;
-//     z-index: 10;
-//     background-image: url("../assets/images/imgBanner/Banner-Poke.jpg");
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//   }
+//   /* .an{
+//     flex-direction: column;
+//   } */
   
-//   .top-bar {
-//     background-color: #3b5998;
-//     color: white;
-//     width: 100%;
+//   .contacto{
 //     display: flex;
-//     justify-content: space-between;
-//     padding: 5px 20px;
-//     align-items: center;
 //   }
   
-//   .uni-logo img {
-//     height: 35px;
-//   }
-  
-//   .auth-links {
+//   .pago{
 //     display: flex;
-//     align-items: center;
 //   }
   
-//   .auth-links a {
-//     color: white;
-//     margin-left: 8px;
-//     text-decoration: none;
-//     font-weight: 500;
-//   }
-  
-//   .auth-links a:hover {
-//     text-decoration: underline;
-//   }
-  
-//   .auth-links .separator {
-//     margin: 0 5px;
-//     height: 22px;
-//   }
-  
-//   .auth-links .user-icon {
-//     margin: 0 5px;
-//     height: 25px;
-//   }
-  
-//   .main-header {
-//     background-color: white;
-//     width: 100%;
+//   /* .flex{
 //     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 22px 30px;
-//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//     position: relative;
-//   }
+//   } */
   
-//   .brand h1 {
-//     color: #29CCBA;
-//     font-size: 3em; /* Aumenta el tamaño de la fuente de MOLOKA'I */
-//     margin: 0;
-//     font-family: "Playfair Display", serif;
-//     font-weight: 200;
-//     letter-spacing: 10px;
-//   }
-  
-//   nav {
-//     display: flex;
-//     gap: 20px;
-//     align-items: center;
-//     margin-left: auto;
-//   }
-  
-//   nav a {
-//     text-decoration: none;
-//     color: #ff6b6b;
-//     font-weight: bold;
-//     font-size: 1.3em; /* Aumenta el tamaño de la fuente de INICIO, NOSOTROS, y MENU */
-//   }
-  
-//   nav .menu-btn {
-//     background-color: #ff6b6b;
-//     color: white;
-//     padding: 10px 15px;
-//     border-radius: 5px;
-//     font-size: 1.3em; /* Aumenta el tamaño de la fuente del botón MENU */
-//   }
-  
-//   .cart {
-//     margin-left: 40px;
-//   }
-//   .cart img {
-//     height: 60px;
-//     cursor: pointer;
-//   }
-  
-//   .logoMolokai {
-//     flex: 1;
+//   .barraF > div {
+//     flex: 1 1 200px;
 //     text-align: center;
-//     position: absolute;
-//     top: 20px;
-//     left: 50%;
-//     transform: translateX(-50%);
+//     margin: 10px;
 //   }
   
-//   .logoMolokai img {
-//     max-width: 140px;
+//   .barraF img {
+//     max-width: 100px;
+//     height: auto;
+//     margin: 10px;
 //   }
   
-//   @media (max-width: 1024px) {
-//     .menu {
-//       position: fixed;
-//       top: 0;
-//       right: -100%;
-//       height: 100vh;
-//       flex-direction: column;
-//       align-items: flex-start;
-//       background-color: white;
-//       padding: 2rem;
-//       transition: right 0.3s ease-in-out;
-//       z-index: 100;
-//     }
-  
-//     .menu.responsive_nav {
-//       right: 0;
-//     }
-  
-//     .menu-icon {
-//       display: block;
-//     }
-  
-//     .close-icon {
-//       display: block;
-//       align-self: flex-end;
-//     }
-  
-//     .logoMolokai {
-//       position: static;
-//       transform: none;
-//     }
+//   .contactoTexto, .contactos, .tlf, .siguenos, .copy, .acercade, .creador {
+//     color: white;
+//     margin: 10px 0;
 //   }
   
-//   /* Media Queries para hacer el header responsive */
-//   @media (max-width: 1020px) {
-//     .top-bar {
-//       align-items: center;
-//       padding: 1px 20px;
-//     }
-  
-//     .uni-logo img {
-//       max-width: 100px;
-//     }
-  
-//     .auth-links {
-//       margin-top: 2px;
-//     }
-  
-//     .auth-links a{
-//       font-size: 0.8em; 
-//     }
-  
-//     .main-header {
-//       align-items: center;
-//       padding: 17px 30px;
-//     }
-    
-  
-//     .brand h1 {
-//       font-size: 34px;
-//     }
-  
-//     .logoMolokai img {
-//       max-width: 120px;
-//     }
-  
-//     nav{
-//       gap: 12px;
-//     }
-  
-//     nav a {
-//       margin: 0 1px;
-//       font-size: 1em; 
-//     }
-  
-//     nav .menu-btn {
-//       padding: 8px 13px;
-//       font-size: 1em; 
-//     }
-  
-//     .cart{
-//       margin-left: 20px;
-//     }
-  
-//     .cart img {
-//       height: 50px;
-//       cursor: pointer;
-//     }
-  
-//     .auth-links .separator {
-//       height: 18px;
-//     }
-    
-//     .auth-links .user-icon {
-//       height: 19px;
-//     }
+//   .contactoTexto, .siguenos, .acercade {
+//     font-size: 20px;
 //   }
   
-//   @media (max-width: 795px) {
-  
-//     .uni-logo img {
-//       max-width: 80px;
-//     }
-  
-//     .auth-links {
-//       margin-top: 2px;
-//     }
-  
-//     .auth-links a{
-//       font-size: 0.7em; 
-//     } 
-  
-//     .brand h1 {
-//       font-size: 27px;
-//     }
-  
-//     .logoMolokai img {
-//       max-width: 100px;
-//     }
-  
-//     nav{
-//       gap: 10px;
-//     }
-  
-//     nav a {
-//       font-size: 0.9em; 
-//     }
-  
-//     nav .menu-btn {
-//       font-size: 0.9em; 
-//     }
-  
-//     .cart{
-//       margin-left: 14px;
-//     }
-  
-//     .cart img {
-//       height: 44px;
-//     }
-  
-//     .auth-links .separator {
-//       height: 15px;
-//     }
-    
-//     .auth-links .user-icon {
-//       height: 17px;
-//     }
-    
+//   .contactos, .tlf, .creador {
+//     font-size: 15px;
 //   }
   
-  
-//   @media (max-width: 725px) {
-  
-//     nav{
-//       flex-direction: column;
-//       gap: 8px;
-//     }
-  
-//     nav a {
-//       font-size: 0.6em;
-//     }
-  
-//     nav .menu-btn {
-//       font-size: 0.6em; 
-//     }
-  
-//     .main-header {
-//       padding: 8px 30px;
-//     }
-  
-//     .logoMolokai img {
-//       max-width: 92px;
-//     }
-    
-//     .brand h1 {
-//       font-size: 25px;
-//     }
-    
-//     .cart img {
-//       height: 40px;
-//     }
-  
-//     .uni-logo img {
-//       max-width: 70px;
-//       height: 30px;
-//     }
-  
-//     .auth-links a{ 
-//       margin-left: 0px;
-//     }
-  
+//   .redesSociales {
+//     display: flex;
+//     justify-content: center;
+//     flex-wrap: wrap;
 //   }
   
-  
-//   @media (max-width: 480px) {
-  
-//     nav{
-//       gap: 6px;
-//     }
-  
-//     nav a {
-//       font-size: 0.5em; 
-//     }
-  
-//     nav .menu-btn {
-//       font-size: 0.5em;
-//     }
-  
-//     .logoMolokai img {
-//       max-width: 84px;
-//     }
-  
-//     .brand h1 {
-//       font-size: 22px;
-//     }
-    
-//     .cart img {
-//       height: 35px;
-//     }
-  
-//     .uni-logo img {
-//       max-width: 60px;
-//       height: 25px;
-//     }
-  
-//     .auth-links .separator {
-//       height: 12px;
-//     }
-    
-//     .auth-links .user-icon {
-//       height: 14px;
-//     }
-  
-//     .auth-links a{
-//       font-size: 0.6em; 
-//     }
-  
+//   .redesSociales img {
+//     margin: 5px;
+//     width: 40px;
+//     height: auto;
 //   }
   
+//   .copy {
+//     font-size: 25px;
+//   }
+  
+  /* .line-1, .line-2 {
+    width: 80%;
+    height: 4px;
+    border: 4px solid rgba(141, 128, 128, 1);
+    margin: 20px auto;
+  } */
+  
+    //  @media (max-width: 1678px) {
+      
+      
+    //   }
+      
+  
+    /* @media (max-width: 900px) {
+  
+  
+  
+      .barraF {
+        margin-top: -50%;
+        width: 1000px;
+        max-width: 840px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+  
+      .contactoImg {
+        margin-left: 20%;
+      }
+  
+      .contactoTexto {
+        transform: translate(10%, 150%);
+      }
+      
+      .info {
+        position: relative;
+        top: 30px;
+        margin-left: 22%;
+      }
+  
+      .contactos {
+        transform: translate(10%, 10%);
+      }
+    
+      .tlf{
+        transform: translate(10%, -300%);
+      }
+  
+      .siguenos {
+        visibility: hidden;
+      }
+  
+      .facebook,
+      .twitter,
+      .instagram,
+      .linkedin {
+        visibility: hidden;
+      }
+  
+      .acercade {
+        margin-left: 75%;
+        margin-top: -20%;
+        transform: translate(0%, 60%);
+      }
+    
+      .creador {
+        margin-left: 71%;
+        margin-top: 2%;
+      }
+  
+      .pin {
+        visibility: hidden;
+      }
+  
+      .line-1 {display: none;
+      }
+    
+      .line-2 {display: none;
+      }
+  
+      .unimet {
+        position: relative;
+        margin-left: 70%;
+        margin-top: -15%;
+        top: -3px;
+      }
+  
+      .copy {display: none;
+  
+      }
+  
+    } */

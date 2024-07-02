@@ -132,6 +132,12 @@ body {
   transform: rotate(180deg);
 }
 
+@media (max-width: 1680px) {
+  .planta2 {
+    display: none;
+  }
+}
+
 @media (max-width: 1459px) {
   .planta2 {
     display: none;
@@ -169,8 +175,7 @@ body {
 }
 
 @media (max-width: 480px) {
-
-  .p{
+  .p {
     top: 20px;
   }
 
@@ -201,5 +206,9 @@ body {
   .imagenVision {
     width: 300px;
     height: 300px;
+  }
+
+  .barra {
+    width: 115.10%;
   }
 }

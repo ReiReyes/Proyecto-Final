@@ -114,6 +114,27 @@
   font-family: Poppins, sans-serif;
 }
 
+
+
+
+
+@media (max-width: 1280px) {
+  .imagenOrdenaYa {
+    width: 106%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .imagenOrdenaYa {
+    width: 115.1%;
+  }
+}
+
+
+
+
+
 @media (max-width: 1500px) {
   .comentariosContainer {
     flex-direction: column;
@@ -142,5 +163,10 @@
 
   .ordenaYa {
     font-size: 18px;
+  }
+
+  .barraC {
+    width: 116%;
+
   }
 }
