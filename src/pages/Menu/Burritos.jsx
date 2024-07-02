@@ -5,11 +5,16 @@ import Header from "../../components/Header.jsx";
 import { PRODUCTS } from '../../../products.js';
 import { Product } from "../Menu/Product.jsx";
 import Navbarbu from "../../components/Navbarbu.jsx";
-
+import { useState, useEffect } from "react";
 
 
 const Burritos = () => {
-    
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        setProducts(storedProducts);
+    }, []);
     
     return (
         
@@ -18,9 +23,14 @@ const Burritos = () => {
             <div className="nav-menu"><Navbarbu /></div>
 
             <div className="products">
-                {PRODUCTS.filter(product => product.productType === "burrito").map((product) => (
-                    <Product key={product.id} data={product} />
-                ))}
+            {PRODUCTS.filter(product => product.productType === "burrito").map((product) => (
+                        <Product key={product.id} data={product} />
+                    ))}
+                    
+                    {products.filter(product=> product.productType == "burrito").map((product) => (
+                        <Product key={product.id}data={product} />
+                    ))}
+
 
             </div>
             </div>

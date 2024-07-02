@@ -12,7 +12,7 @@ const Carro = () => {
     const totalAmount = getTotalCartAmount();
 
     return (
-        
+
         <>  
             <div className="cart">
                 <div className="titulo">
