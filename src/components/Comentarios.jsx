@@ -21,7 +21,7 @@ const Checkout = () => {
         <div className="cuadrado">
           <p className="exp">¿Cómo fue su experiencia?</p>
           <br/>
-          <input className="input" placeholder="Añade un comentario"></input>
+          <textarea className="input" placeholder="Añade un comentario"></textarea>
           <button className="botonComentar">
             <p className="enviarComentario">Enviar comentario</p>
           </button>
