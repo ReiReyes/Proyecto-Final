@@ -7,7 +7,7 @@ import planta from "../assets/imgs/imgContactSection/planta.png";
 export default function Nosotros() {
   return (
     <div className="p">
-      <div class="barra">
+      <div class="barra" id="about-section">
         <p className="SN">Sobre nosotros</p>
         <p className="descripcionSN">
           Somos un restaurante especializado en la deliciosa categoría de menú

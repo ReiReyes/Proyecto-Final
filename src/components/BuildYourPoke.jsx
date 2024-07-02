@@ -36,7 +36,7 @@ const BuildYourPoke = () => {
         <img src={crunchies} alt="Step 6 Crunchies" className="step" />
       </div>
       <div className="leaf-C">
-        <img src={hojaImage} alt="Leaf" className="leafc" />
+        <img src={hojaImage} alt="Leaf" className="leafc"/>
       </div>
     </div>
   );

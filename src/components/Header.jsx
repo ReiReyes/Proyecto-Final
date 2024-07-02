@@ -17,6 +17,16 @@ const Header = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
 
+  const scrollToSection = (e) => {
+    e.preventDefault();
+    const section = document.querySelector("#about-section");
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: sectionTop + -144,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="body-header">
       <div className="header">
@@ -45,7 +55,9 @@ const Header = () => {
           </div>
           <nav ref={navRef} className="menu">
             <a href="/home">INICIO</a>
-            <a href="/about">NOSOTROS</a>
+            <a href="#about-section" onClick={scrollToSection}>
+              NOSOTROS
+            </a>
             <a className="pedidos" href="/menu">
               MENÚ
             </a>
