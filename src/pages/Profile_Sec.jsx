@@ -1,17 +1,47 @@
 import { useState } from 'react';
 import '../assets/styles/Profile_Sec.css';
 import Header from '../components/Header-p';
+import Change_Pass from '../components/Change_Pass';
+import { updatePassword } from 'firebase/auth';
+import { auth, db, storage } from "./firebase";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 
 function Profile_Sec() {
+  const [newPassword, setNewPassword] = useState("");
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [showPaypalModal, setShowPaypalModal] = useState(false);
+
+  const handleModalPasswordOpen = () => setShowPasswordModal(true);
+  const handleModalPasswordClose = () => setShowPasswordModal(false);
+  const handleModalPaypalOpen= () => setShowPaypalModal(true);
+  const handleModalPaypalClose = () => setShowPaypalModal(false);
+
+  const [PaypalUser, setPaypalUser] = useState("Usuario")
+  const [PaypalPassword, setPaypalPassword] = useState("Contraseña")
+
+  const handleChangePassword = async (event) => {
+    event.preventDefault();
+    if (newPassword.length < 6) {
+      return;
+    }
+    try {
+      await updatePassword(auth.currentUser, newPassword);
+      setShowPasswordModal(false);
+    } catch (error) {
+      console.error("Error updating password: ", error);
+    }
+  };
 
   const [cards] = useState([
     {
       title: 'Contraseña',
       text: 'Cambiar',
+      button: handleModalPasswordOpen,
     },
     {
       title: 'Pago en Linea',
       text: 'Paypal',
+      button: handleModalPaypalOpen,
     },
   ]);
 
@@ -53,11 +83,22 @@ function Profile_Sec() {
     }));
   };
 
+  const handleSave_Paypal = async (event) => {
+    event.preventDefault();
+    const change = doc(db, "Users", auth.currentUser.uid);
+    await updateDoc(change, {
+    usuario_paypal: PaypalUser,
+    password_paypal: PaypalPassword,
+    });
+    console.log("Changes saved");
+  };
+
+
   return (
     <>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <div className='bodyProfile_Sec'>
-        <Header primero="Perfil" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
+        <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
         <section className='section_options'>
           <div className='card_box'>
             <div className='cards'>
@@ -65,7 +106,7 @@ function Profile_Sec() {
                 <div key={i} className='cards'>
                   <h3 className='titles_security'>{card.title}</h3>
                   <div className='card'>
-                    <button className='cards_button'>{card.text}</button>
+                    <button className='cards_button' onClick={card.button}>{card.text}</button>
                   </div>
                 </div>
               ))}
@@ -110,6 +151,39 @@ function Profile_Sec() {
           </div>
         </section>
       </div>
+      <Change_Pass show={showPasswordModal} handleClose={handleModalPasswordClose} operation="Cambiar Contraseña">
+        <form onSubmit={handleChangePassword}>
+          <div>
+            <input
+              type="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              className="password_change_input"
+            />
+          </div>
+          <button type="submit" className="password_change_button">Guardar</button>
+        </form>
+      </Change_Pass>
+
+      <Change_Pass show={showPaypalModal} handleClose={handleModalPaypalClose} operation= "Paypal">
+        <form onSubmit={handleSave_Paypal}>
+          <div>
+            <input
+              type="user"
+              value={PaypalUser}
+              onChange={(e) => setPaypalUser(e.target.value)}
+              className="password_change_input"
+            />
+            <input
+              type="password"
+              value={PaypalPassword}
+              onChange={(e) => setPaypalPassword(e.target.value)}
+              className="password_change_input"
+            />
+          </div>
+          <button type="submit" className="password_change_button">Guardar</button>
+        </form>
+      </Change_Pass>
     </>
   );
 }

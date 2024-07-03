@@ -1,5 +1,3 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
 import LoginForm from "./pages/LoginForm.jsx";
 import RegisterForm from "./pages/RegisterForm.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
@@ -27,6 +25,14 @@ function App() {
     }); 
   });
 
+ const [user, setUser]=useState();
+  useEffect(()=>{
+    auth.onAuthStateChanged((user) => {
+      setUser(user);
+    }); 
+  });
+
+
   return (
         <ShopContextProvider>
           <BrowserRouter>
@@ -52,5 +58,3 @@ function App() {
 }
 
 export default App;
-
-
