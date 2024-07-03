@@ -14,7 +14,13 @@ import Headers from "../components/Header-s.jsx";
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const adminCorreo = [
+        "Reinaldo@Molokai.com","Juan@Molokai.com","Andres@Molokai.com",
+        "Luis@Molokai.com","Carlos@Molokai.com"
+    ]
+    //Contraseña de Admin: Molokai2021
+    
+    const [isAdmin, setIsAdmin] = useState(false);
 
     //se encarga del login
     const handleSubmit = async(e) => {
@@ -23,11 +29,14 @@ const LoginForm = () => {
             await signInWithEmailAndPassword(auth, email, password);
             console.log('Usuario Loggeado correctamente!')
             toast.success("Usuario loggeado correctamente!",{
-                position: "top-center",
-              });
+                position: "top-center",});
+                
             //pagina a la que manda despues del login
             window.location.href='/LandingPage';
-            
+            {/*if (adminCorreo.includes(email)) {
+              setIsAdmin(true);
+              console.log('Usuario es Admin')
+            } */}
         } catch (error) {
             console.log(error.message);
             toast.error(error.message, {
@@ -55,27 +64,10 @@ const LoginForm = () => {
             position: "top-center",
           });
           window.location.href = "/LandingPage";
-        }
-      });
-    }
-    function facebookLogin() {
-        const providerf = new FacebookAuthProvider();
-        signInWithPopup(auth, providerf).then(async (result) => {
-        console.log(result);
-        const user = result.user;
-        if (result.user) {
-          await setDoc(doc(db, "Users", user.uid), {
-            email: user.email,
-            nombre: user.displayName,
-            photo: user.photoURL,
-            apellido: "",
-            rol: "",
-            telefono: "",
-          });
-          toast.success("Usuario loggeado correctamente!", {
-            position: "top-center",
-          });
-          window.location.href = "/LandingPage";
+          {/*if (adminCorreo.includes(email)) {
+              setIsAdmin(true);
+              console.log('Usuario es Admin')
+            } */}
         }
       });
     }
@@ -111,7 +103,6 @@ const LoginForm = () => {
                     <p className="continue-p">-- O continua con--</p>
                         <div className="social">
                         <img className="socialImg" src={'./src/assets/imgs/google.jpg'} onClick={googleLogin}/>
-                        <img className="socialImg"src={'./src/assets/imgs/facebook.svg'} onClick={facebookLogin}/>
                         </div>
                 </div>
 

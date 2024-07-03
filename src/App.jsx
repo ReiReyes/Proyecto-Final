@@ -26,17 +26,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>        
-      <Routes>
-        <Route index element={user? <Navigate to ="/Profile"/> : <LoginForm />} />
-        <Route path="/Login" element = {<LoginForm />} />
-        <Route path="/Profile" element = {<Profile />} />
-        <Route path="/LandingPage" element = {<LandingPage/>} />
-        <Route path="/register" element = {<RegisterForm/>} />
-        <Route path="/Profile_security" element = { <Profile_Sec />} />
-      </Routes>
-    </BrowserRouter>
-
+    <LoginForm/>
     </>
   )
 }

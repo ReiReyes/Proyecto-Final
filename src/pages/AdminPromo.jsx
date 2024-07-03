@@ -1,16 +1,11 @@
 import "../assets/styles/Admin.css";
 import "../assets/styles/AdminPromo.css";
 import Headerp from "../components/Header-p.jsx";
-import { FaMagnifyingGlass } from "react-icons/fa6";
-import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import Activos from "../components/Activos.jsx";
 import AddCod from "../components/AddCod.jsx";
 
 function AdminPromo() {
-    const Codigos = [
-        {}
-    ]
     const [showPopup, setShowPopup] = useState(false);
     const [savedDataList, setSavedDataList] = useState([]);
     const [savedDataListDes, setSavedDataListDes] = useState([]);

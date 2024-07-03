@@ -1,9 +1,10 @@
 import "../assets/styles/Order.css";
-function Order(props) {
+function Order({codigo, hora, fecha, onClickOrder}) {
   return (
     <div className="orderborder">
-      <button className="orderbutton">{props.codigo} {props.hora} {props.fecha}</button>
+      <button className="orderbutton" onClick={onClickOrder}>{codigo} {hora} {fecha}</button>
     </div>
   );
 }
 export default Order;
+
