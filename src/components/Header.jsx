@@ -30,6 +30,7 @@ const Header = () => {
       top: sectionTop + -144,
       behavior: "smooth",
     });
+    showNavbar();
   };
 
   return (
@@ -75,7 +76,7 @@ const Header = () => {
             <img src={logoMolokai} alt="Logotipo de MOLOKA'I" />
           </div>
           <nav ref={navRef} className="menu">
-            <a href="/home">INICIO</a>
+            <a href="/">INICIO</a>
             <a href="#about-section" onClick={scrollToSection}>
               NOSOTROS
             </a>
