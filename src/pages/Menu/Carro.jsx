@@ -5,12 +5,23 @@ import { PRODUCTS } from "../../../products.js";
 import {ShopContext} from '../../context/shop-context'
 import {CartItem} from './cart-item.jsx'
 import backArrow from '../../assets/imgs/imgCarro/back.png'
-
+import { useState, useEffect } from "react";
 
 const Carro = () => {
     const { cartItems, getTotalCartAmount } = useContext(ShopContext);
     const totalAmount = getTotalCartAmount();
+    const [products, setProducts] = useState([]);
 
+    useEffect(() => {
+        const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        const deletedProductIds = JSON.parse(localStorage.getItem('DELETED_PRODUCTS')) || [];
+
+        const filteredPredefinedProducts = PRODUCTS.filter(product => !deletedProductIds.includes(product.id));
+        
+        const filteredStoredProducts = storedProducts.filter(product => !deletedProductIds.includes(product.id));
+
+        setProducts([...filteredPredefinedProducts, ...filteredStoredProducts]);
+    }, []); 
     return (
 
         <>  
@@ -20,11 +31,12 @@ const Carro = () => {
                 </div>
 
                 <div className="cart-items">
-                    {PRODUCTS.map((product) => {
+                    {products.map((product) => {
                         if(cartItems[product.id] !== 0){
                             return <CartItem data={product}/>
                         }
                     })}
+                     
                 </div>
 
                 <div className="checkout">

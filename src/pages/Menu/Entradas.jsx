@@ -12,8 +12,14 @@ const Entradas = () => {
 
     useEffect(() => {
         const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
-        setProducts(storedProducts);
-    }, []);
+        const deletedProductIds = JSON.parse(localStorage.getItem('DELETED_PRODUCTS')) || [];
+
+        const filteredPredefinedProducts = PRODUCTS.filter(product => !deletedProductIds.includes(product.id));
+        
+        const filteredStoredProducts = storedProducts.filter(product => !deletedProductIds.includes(product.id));
+
+        setProducts([...filteredPredefinedProducts, ...filteredStoredProducts]);
+    }, []); 
 
     return (
 
@@ -22,10 +28,6 @@ const Entradas = () => {
                 <div className="nav-menu"><Navbar /></div>
 
                 <div className="products">
-                    {PRODUCTS.filter(product => product.productType === "entrada").map((product) => (
-                        <Product key={product.id} data={product} />
-                    ))}
-                    
                     {products.filter(product=> product.productType == "entrada").map((product) => (
                         <Product key={product.id}data={product} />
                     ))}

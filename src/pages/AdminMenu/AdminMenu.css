@@ -1,7 +1,22 @@
-
-
-.nav-menu-a {
-  margin-top: 200px;
+.box-title-a{
+    margin-top: 200px;
+    text-align: center;
+    background-color: #00d1b2;
+    border-width: 3px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #00ac92;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+.box-title-a h1{
+  display: flex;
+    color: white;
+    font-size: 40px;
+    margin: 1rem;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .main-box-a {
@@ -169,9 +184,6 @@
     color:  #f5121e;    
 }
 @media (max-width: 900px) {
-  .nav-menu-a {
-    margin-top: 35%;
-  }
 
   .products-a {
     grid-template-columns: 1fr 1fr;

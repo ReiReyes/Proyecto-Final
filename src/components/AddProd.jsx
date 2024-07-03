@@ -1,5 +1,6 @@
 import '../assets/styles/AddProd.css';
 import { useState, useEffect } from 'react';
+import { PRODUCTS } from '../../products.js';
 
 function AddProd({ show, onClose, productToEdit }) {
     const [input1, setInput1] = useState('');
@@ -7,6 +8,14 @@ function AddProd({ show, onClose, productToEdit }) {
     const [input3, setInput3] = useState('');
     const [input4, setInput4] = useState('');
     const [image, setImage] = useState(null);
+    const [allProducts, setAllProducts] = useState([...PRODUCTS]);
+
+    useEffect(() => {
+        const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        const deletedProducts = JSON.parse(localStorage.getItem('DELETED_PRODUCTS')) || [];
+        const filteredProducts = PRODUCTS.filter(product => !deletedProducts.includes(product.id));
+        setAllProducts([...filteredProducts, ...storedProducts]);
+    }, []);
 
     useEffect(() => {
         if (!show) {
@@ -45,16 +54,29 @@ function AddProd({ show, onClose, productToEdit }) {
             productType: input4.toLowerCase(),
         };
 
-        const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        let storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        let deletedProducts = JSON.parse(localStorage.getItem('DELETED_PRODUCTS')) || [];
+
         if (productToEdit) {
             const index = storedProducts.findIndex(p => p.id === productToEdit.id);
             if (index !== -1) {
                 storedProducts[index] = newProduct;
+            } else {
+                const predefIndex = PRODUCTS.findIndex(p => p.id === productToEdit.id);
+                if (predefIndex !== -1) {
+                    // Mark the product in PRODUCTS as deleted and add the new product to local storage
+                    deletedProducts.push(productToEdit.id);
+                    localStorage.setItem('DELETED_PRODUCTS', JSON.stringify(deletedProducts));
+                    newProduct.id = Date.now();
+                    storedProducts.push(newProduct);
+                }
             }
         } else {
             storedProducts.push(newProduct);
         }
         localStorage.setItem('PRODUCTS', JSON.stringify(storedProducts));
+        const filteredProducts = PRODUCTS.filter(product => !deletedProducts.includes(product.id));
+        setAllProducts([...filteredProducts, ...storedProducts]);
         console.log('Producto agregado/modificado:', newProduct);
 
         setInput1('');
@@ -67,9 +89,16 @@ function AddProd({ show, onClose, productToEdit }) {
     };
 
     const handleDelete = () => {
-        const storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
-        const updatedProducts = storedProducts.filter(p => p.id !== productToEdit.id);
+        let storedProducts = JSON.parse(localStorage.getItem('PRODUCTS')) || [];
+        let updatedProducts = storedProducts.filter(p => p.id !== productToEdit.id);
+
+        let deletedProducts = JSON.parse(localStorage.getItem('DELETED_PRODUCTS')) || [];
+        deletedProducts.push(productToEdit.id);
+        localStorage.setItem('DELETED_PRODUCTS', JSON.stringify(deletedProducts));
+
         localStorage.setItem('PRODUCTS', JSON.stringify(updatedProducts));
+        const filteredProducts = PRODUCTS.filter(product => !deletedProducts.includes(product.id));
+        setAllProducts([...filteredProducts, ...updatedProducts]);
         console.log('Producto eliminado:', productToEdit);
 
         setInput1('');
@@ -82,7 +111,7 @@ function AddProd({ show, onClose, productToEdit }) {
     };
 
     const isFormValid = () => {
-        return input1 && input2 && input3 && input4 && image;
+        return input1 && input3 && input4 && image;
     };
 
     if (!show) {
