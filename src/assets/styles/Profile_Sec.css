@@ -53,6 +53,12 @@
     overflow: hidden;
 }
 
+.cards_buttons_sec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+}
 .cards{
     display: flex;
     flex-wrap: wrap;
@@ -182,6 +188,12 @@
   }
 
   .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards_buttons_sec {
+    width: 200%;
     flex-direction: column;
     align-items: center;
   }
