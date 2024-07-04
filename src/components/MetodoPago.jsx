@@ -25,7 +25,7 @@ const MetodoPago = ({ onNext, onBack }) => {
   return (
     <detalles>
       {/* Barra */}
-      <div className="top-bar">
+      <div className="top-bar-c">
         <button onClick={onBack} className="blueBar">
           <img src={exit} className="exit"  alt="Exit"></img>
         </button>
@@ -35,8 +35,8 @@ const MetodoPago = ({ onNext, onBack }) => {
       <div className="linea"></div>
       <div className="circulos">       
         <div className="circulo" />
-        <div className="circulo" />
-        <div className="circulo" />
+        <div className="circuloRelleno" />
+        <div className="circulo"/>
       </div>
       
       <div className="nombreEstados">
@@ -57,7 +57,7 @@ const MetodoPago = ({ onNext, onBack }) => {
           <button className={isSeleccionPago1Clicked ? 'seleccionPago1 clicked' : 'seleccionPago1'} onClick={handleClickSeleccionPago1}></button>
           <img src={paypal} className="paypal" alt="Paypal"></img>
         </div>
-        <div className={isSeleccionPago2Clicked ? 'seleccionPago2 clicked' : 'seleccionPago2' /* Esta es la parte para que no salga, cambia el nombre de clase y ya */}>
+
         <p className="pagar">Detalles del pago</p>
         <input className='nombreTarjeta' placeholder='Nombre en tarjeta' />
         <input className='nroTarjeta' placeholder='Número de tarjeta' />
@@ -66,7 +66,7 @@ const MetodoPago = ({ onNext, onBack }) => {
         <input className='fechaTarjeta' placeholder='Fecha de expiración' />
         <input className='ccvTarjeta' placeholder='CCV' />
         <br/><br/>
-        </div>
+
         <p className="descuento">Codigo de descuento</p>
         <input className='codigo' placeholder='Codigo descuento' />
       </div>
