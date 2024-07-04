@@ -32,6 +32,7 @@ function App() {
         <ShopContextProvider>
           <BrowserRouter>
               <Routes>
+                <Route index path="/LandingPage" element={<LandingPage />}/>
                 <Route path="/Login" element={<LoginForm />} />
                 <Route path="/Register" element={<RegisterForm />} />
                 <Route path="/Profile" element={<Profile />} />
