@@ -24,9 +24,9 @@ const AdminMenu = () => {
         <>
             <div className="bodyA">
                 <Headerp primero="Inicio" enlacep="LandingPage"
-                    segundo="Gestionar Menú" enlaces="Manage-menu"
-                    tercero="Gestionar Historial" enlacet="Manage-shop-record"
-                    cuarto="Gestionar Promociones" enlacec="Manage-coupons" />
+                    segundo="Gestionar Menú" enlaces="Manage-Menu"
+                    tercero="Gestionar Historial" enlacet="Manage-Historial"
+                    cuarto="Gestionar Promociones" enlacec="Manage-Coupons" />
                 <div className="main-box-a">
                     <div className="box-title-a"><h1>NUESTRO MENU!</h1></div>
 

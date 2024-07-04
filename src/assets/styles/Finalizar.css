@@ -1,0 +1,36 @@
+/*-----------------Hora de delivery-----------------*/
+
+.confirmarCuadro2,
+.confirmarCuadro1 {
+  height: 200px;
+  padding: 0px 0px 0px 30px;
+  border: 2px solid rgba(41, 204, 186, 1);
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.confirmarCuadro2{
+  margin-top: 2%;
+  height: 100px;
+}
+
+.informacion{
+  position: relative;
+  top:30px;
+  font-size: 25px;
+}
+
+/*Seteo de ubicación*/
+.confirmarCuadro2,
+.confirmarCuadro1 {
+  margin-left: 100px;
+  width: 800px;
+}
+
+@media (max-width: 1200px){
+  .confirmarCuadro2,
+  .confirmarCuadro1{
+    margin-left: 0px;
+    width: 100%;
+  }
+}

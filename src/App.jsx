@@ -18,6 +18,7 @@ import { ShopContextProvider } from "./context/shop-context";
 import Bowls from "./pages/Menu/Bowls.jsx";
 import Burritos from "./pages/Menu/Burritos.jsx";
 import Bebidas from "./pages/Menu/Bebidas.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 function App() {
   const [user, setUser] = useState();
@@ -40,13 +41,14 @@ function App() {
                 <Route path="/Profile_history" element={<ProfileHist />} />
                 <Route path="/LandingPage" element={<LandingPage />} />
                 <Route path="Manage-Menu" element={<AdminMenu/>}/>
-                <Route path="Manage-Promos" element={<AdminPromo/>}/>
+                <Route path="Manage-Coupons" element={<AdminPromo/>}/>
                 <Route path="Manage-Historial" element={<AdminHist/>}/>
                 <Route path="/Entradas" element={<Entradas />} />
                 <Route path="/Bowls" element={<Bowls />} />
                 <Route path="/Burritos" element={<Burritos />} />
                 <Route path="/Bebidas" element={<Bebidas />} />
                 <Route path="/Carro" element={<Carro />} />
+                <Route path="/Checkout" element={<Checkout />} />
               </Routes>
               <ToastContainer />
           </BrowserRouter>

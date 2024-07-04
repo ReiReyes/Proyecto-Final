@@ -42,7 +42,7 @@ const Carro = () => {
                 <div className="checkout">
                     <p>Subtotal: ${totalAmount}</p>
                     <a href="/Entradas"><button>Continuar Comprando</button></a>
-                    <a href="#"><button>Checkout</button></a>
+                    <a href="/Checkout"><button>Checkout</button></a>
                 </div>
             </div>
         </>
