@@ -76,11 +76,21 @@ function Profile() {
     return <div className="loading_screen_profile">loading...</div>;
   }
 
+async function handleLogout() {
+    try {
+      await auth.signOut();
+      window.location.href = "/login";
+      console.log("User logged out successfully!");
+    } catch (error) {
+      console.error("Error logging out:", error.message);
+    }
+  }
+  
   return (
     <>
       <form onSubmit={handleSave}>
         <div className='bodyProfile'>
-          <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
+          <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial"  cuarto="Log Out" />
           <div className='User_Profile'>
             <div className="Img_user_container">
               <img className="Img_user" src={profilePic} alt="User" />
