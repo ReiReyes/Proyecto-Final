@@ -117,7 +117,6 @@ function Profile_Sec() {
       }
     });
 
-    // Clean up the subscription on unmount
     return () => unsubscribe();
   }, []);
 
