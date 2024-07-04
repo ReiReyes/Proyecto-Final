@@ -1,10 +1,9 @@
 import React from "react";
 import './AdminMenu.css';
 import Headerp from "../../components/Header-p.jsx";
-import Navbar from "../../components/Navbar.jsx";
 import { PRODUCTS } from '../../../products.js';
-import { Product } from "../AdminMenu/ProductA.jsx";
-import { NewProduct } from "../AdminMenu/ProductAdd.jsx"
+import { Product } from "../../components/ProductA.jsx";
+import { NewProduct } from "../../components/ProductAdd.jsx"
 import { useEffect, useState } from 'react';
 
 const AdminMenu = () => {

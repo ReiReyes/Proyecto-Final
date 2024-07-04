@@ -31,6 +31,7 @@ function App() {
         <ShopContextProvider>
           <BrowserRouter>
               <Routes>
+                
                 <Route index element={user ? <Navigate to='/Profile' /> : <LoginForm />} />
                 <Route path="/Login" element={<LoginForm />} />
                 <Route path="/Register" element={<RegisterForm />} />

@@ -33,7 +33,7 @@ const LoginForm = () => {
                 
             //pagina a la que manda despues del login
             window.location.href='/LandingPage';
-            {/*if (adminCorreo.includes(email)) {
+            {/*if (adminCorreo.includes(email) && password === 'Molokai2021') {
               setIsAdmin(true);
               console.log('Usuario es Admin')
             } */}
@@ -64,7 +64,7 @@ const LoginForm = () => {
             position: "top-center",
           });
           window.location.href = "/LandingPage";
-          {/*if (adminCorreo.includes(email)) {
+          {/*if (adminCorreo.includes(email) && password === 'Molokai2021') {
               setIsAdmin(true);
               console.log('Usuario es Admin')
             } */}

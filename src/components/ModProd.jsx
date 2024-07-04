@@ -1,4 +1,4 @@
-import '../assets/styles/AddProd.css';
+/*import '../assets/styles/AddProd.css';
 import { useState, useEffect } from 'react';
 
 function ModProd({ show, onClose }) {
@@ -119,4 +119,4 @@ function ModProd({ show, onClose }) {
     );
 }
 
-export default ModProd;
+export default ModProd;*/

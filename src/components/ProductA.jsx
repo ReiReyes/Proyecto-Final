@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddProd from "../../components/AddProd.jsx"; // Asegúrate de que el nombre del componente sea correcto
+import AddProd from "./AddProd.jsx"; // Asegúrate de que el nombre del componente sea correcto
 
 export const Product = (props) => {
     const { id, productName, price, productImage, productDesc, productType } = props.data;

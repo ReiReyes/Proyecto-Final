@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddProduc from "../../components/AddProd.jsx";
+import AddProduc from "./AddProd.jsx";
 export const NewProduct = () => {
   const [showPopupAddProduct, setShowPopupAddProduct] = useState(false);
     const togglePopupAdd = () => {
