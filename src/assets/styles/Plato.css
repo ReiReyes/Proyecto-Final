@@ -45,7 +45,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+   
     
   }
 .precioplato {
@@ -54,7 +54,7 @@
   color: white;
   background-color: #f8646c;
   text-align: center;
-  padding: 4px 8px;
+  
   border-radius: 10px;
   justify-content: center;
 }
@@ -92,13 +92,7 @@
     font-size: 12px;
   }
   .precioplato{
-    font-size: 6px;
-    width: 20%;
-    align-self: center;
-  }
-  .cantplato{
-    font-size: 6px;
-    width: 20%;
     
+    align-self: center;
   }
 }

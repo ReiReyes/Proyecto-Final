@@ -4,12 +4,12 @@ import Headerp from "../components/Header-p.jsx";
 import Order from "../components/Order.jsx";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Plato from "../components/Plato.jsx";
 
 function AdminHist() {
     const navRefA = useRef(null);
-    const [selectedOrder, setSelectedOrder] = useState(null);
+    const [selectedPedido, setSelectedPedido] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
 
     const showBusq = () => {
@@ -20,49 +20,25 @@ function AdminHist() {
         }
     };
 
-    const orderList = [
-        {
-            id: 1,
-            codigo: "HO1820234",
-            hora: "12:01",
-            fecha: "15/5/2024",
-            metodoPago: "Paypal",
-            estado: "Finalizado",
-            total: 35,
-            detalles: [
-                { nombre: "Hamburguesa", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas"},
-                { nombre: "Papas", cantidad: 1, precio: 10, img: "", ingredientes: "Cosas, cosas" },
-                { nombre: "Refresco", cantidad: 1, precio: 5, img: "", ingredientes: "Cosas, cosas" }
-            ]
-        },
-        {
-            id: 2,
-            codigo: "HO1820235",
-            hora: "13:01",
-            fecha: "15/5/2024",
-            metodoPago: "Tarjeta de Crédito",
-            estado: "En Proceso",
-            total: 80,
-            detalles: [
-                { nombre: "Pasta", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas" },
-                { nombre: "Papas", cantidad: 1, precio: 10, img: "", ingredientes: "Cosas, cosas" },
-                { nombre: "Refresco", cantidad: 1, precio: 50, img: "", ingredientes: "Cosas, cosas" }
-            ]
-        }
-    ];
+    const [pedidosList, setPedidos] = useState([]);
 
-    const handleOrderClick = (order) => {
-        setSelectedOrder(order);
+    useEffect(() => {
+        const storedPedidos = JSON.parse(localStorage.getItem('PEDIDOS')) || [];
+        setPedidos(storedPedidos);
+    }, []);
+
+    const handlePedidoClick = (pedido) => {
+        setSelectedPedido(pedido);
     };
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
     };
 
-    const filteredOrders = orderList.filter(order =>
-        order.codigo.includes(searchTerm.toUpperCase()) ||
-        order.hora.includes(searchTerm.replace(" ", '')) ||
-        order.fecha.includes(searchTerm)
+    const filteredPedidos = pedidosList.filter(pedido =>
+        pedido.id.toString().includes(searchTerm.toUpperCase()) ||
+        pedido.horaPedido.includes(searchTerm.replace(" ", '')) ||
+        pedido.fechaPedido.includes(searchTerm)
     );
 
     return (
@@ -89,13 +65,13 @@ function AdminHist() {
                             onChange={handleSearchChange}
                         />
                         <div className="ordenes">
-                            {filteredOrders.map((order) => (
+                            {filteredPedidos.map((pedido) => (
                                 <Order
-                                    key={order.codigo}
-                                    codigo={order.codigo}
-                                    hora={order.hora}
-                                    fecha={order.fecha}
-                                    onClickOrder={() => handleOrderClick(order)}
+                                    key={pedido.id}
+                                    codigo={pedido.id}
+                                    hora={pedido.horaPedido}
+                                    fecha={pedido.fechaPedido}
+                                    onClickOrder={() => handlePedidoClick(pedido)}
                                 />
                             ))}
                         </div>
@@ -104,25 +80,25 @@ function AdminHist() {
                 <div className="detallepedido">
                     <h1 className="detalletitulo">DETALLES DEL PEDIDO</h1>
                     <div className="separador"></div>
-                    {selectedOrder ? (
+                    {selectedPedido ? (
                         <div className="detalles">
                             <div className="datospedido">
                                 <div className="dato">
                                     <p className="titulodato">Metodo Pago</p>
-                                    <p className="infodato">{selectedOrder.metodoPago}</p>
+                                    <p className="infodato">{selectedPedido.metodoPago}</p>
                                 </div>
                                 <div className="dato">
                                     <p className="titulodato">Estado Actual</p>
-                                    <p className="infodato">{selectedOrder.estado}</p>
+                                    <p className="infodato">{selectedPedido.estado}</p>
                                 </div>
                                 <div className="dato">
                                     <p className="titulodato">Total Pagado</p>
-                                    <p className="infodato">{selectedOrder.total}$</p>
+                                    <p className="infodato">{selectedPedido.total}$</p>
                                 </div>
                             </div>
                             <div className="tuOrden">
                                 <div className="orden">
-                                    {selectedOrder.detalles.map((detalle, index) => (
+                                    {selectedPedido.productosPedido.map((detalle, index) => (
                                         <Plato
                                             key={index}
                                             nombre={detalle.nombre}

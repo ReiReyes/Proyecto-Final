@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const Finalizar = ({ onNext, onBack }) => {
 
   const [horaVenezuela, setHoraVenezuela] = useState('');
-
+  const [totalPagar, setTotalPagar] = useState(25); // Aqui coloca el total de carrito
   useEffect(() => {
     const getHoraVenezuela = () => {
       const horaActual = moment().tz('America/Caracas').format('HH:mm:ss');
@@ -17,11 +17,33 @@ const Finalizar = ({ onNext, onBack }) => {
     getHoraVenezuela();
   }, []);
 
-  // const redirectToMetodoPago = () => {
-
-  //   console.log('Redirigiendo al método de pago');
-  // };
   const metodo = 'Paypal';
+  const handleFinalizar = () => {
+    const pedido = {
+      id: Date.now(),
+      metodoPago: metodo,   //el metodo de pago cuando lo logres pasar cambialo aqui
+      fechaPedido: moment().format('DD/MM/YYYY'),
+      horaPedido: horaVenezuela,
+      totalPagar: totalPagar,
+      estado: 'Finalizado',
+      productosPedido: [
+        { nombre: "Hamburguesa", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas"},
+        { nombre: "Papas", cantidad: 1, precio: 10, img: "", ingredientes: "Cosas, cosas" },
+        { nombre: "Refresco", cantidad: 1, precio: 5, img: "", ingredientes: "BASE, ATÚN, SALMÓN,CAMARÓN, EDAMAME,ZANAHORIA, KANI, AGUACATE." }
+        // esto es solo una muestra cambia aqui por los productos que tengas en el carrito y que se vean con esa estructura
+    ],
+    correo: "", // esto es solo un ejemplo, cuando tengas el correo del usuario cambialo aqui
+      
+    };
+
+    let storedPedidos = JSON.parse(localStorage.getItem('PEDIDOS')) || [];
+    storedPedidos.push(pedido);
+    localStorage.setItem('PEDIDOS', JSON.stringify(storedPedidos));
+
+    console.log('Pedido guardado:', pedido);
+
+    onNext();
+  };
 
   return (
     <detalles>
@@ -57,7 +79,7 @@ const Finalizar = ({ onNext, onBack }) => {
         <p className="informacion">Total a pagar: {25}</p>
       </div>
 
-      <button className="confirmar-boton" onClick={onNext}>
+      <button className="confirmar-boton" onClick={handleFinalizar}>
         <p className="confirmar">Finalizar</p>
       </button>
     </detalles>

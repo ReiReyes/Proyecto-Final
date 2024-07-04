@@ -189,3 +189,16 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 580px) {
+
+  .main-box-a{
+      max-width: 500px;
+      margin: auto;
+  }
+      
+  .products-a {
+      grid-template-columns: 1fr;
+  }
+    
+  }
+
