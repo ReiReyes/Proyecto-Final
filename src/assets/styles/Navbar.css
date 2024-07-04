@@ -98,10 +98,17 @@
       
 }
 
-@media (max-width: 725px) {
+@media (max-width: 580px) {
+
     
-    .navbar {
-        margin-left: -6%;
+    .navbar .choosen a{
+        font-size: 15px;
+        margin: 10px;
+    }
+
+    .navbar .navOption a{
+        font-size: 15px;
+        margin: 10px;
     }
       
 }

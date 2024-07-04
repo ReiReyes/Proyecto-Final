@@ -128,6 +128,11 @@
 
 
 @media (max-width: 900px) {
+
+.main-box{
+    max-width: 600px;
+    margin: auto;
+}
     
 .nav-menu{
     margin-top: 35%;
@@ -138,4 +143,18 @@
 }
   
 }
+
+
+@media (max-width: 580px) {
+
+    .main-box{
+        max-width: 500px;
+        margin: auto;
+    }
+        
+    .products {
+        grid-template-columns: 1fr;
+    }
+      
+    }
 
