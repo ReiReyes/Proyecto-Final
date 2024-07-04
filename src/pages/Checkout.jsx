@@ -20,7 +20,7 @@ const Checkout = () => {
     <div>
       {step === 1 && <Detalles onNext={nextStep} />}
       {step === 2 && <MetodoPago onNext={nextStep} onBack={() => setStep(1)} />}
-      {step === 3 && <Finalizar onNext={nextStep} onBack={() => setStep(2)} />}
+      {step === 3 && <Finalizar onNext={nextStep} onBack={() => setStep(2) } />}
       {step === 4 && <Confirmado onComentar={goToComentarios} onBack={() => setStep(3)} />}
       {step === 5 && <Comentarios />}
     </div>

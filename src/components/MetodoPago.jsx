@@ -5,7 +5,7 @@ import paypal from "../assets/imgs/imgMetodoPago/PayPal.png";
 import debito from "../assets/imgs/imgMetodoPago/Debito.png";
 import PropTypes from 'prop-types';
 
-const MetodoPago = ({ onNext }) => {
+const MetodoPago = ({ onNext, onBack }) => {
 
   // Scripts para los botones de debito y paypal
   const [isSeleccionPago2Clicked, setSeleccionPago2Clicked] = useState(false);
@@ -26,9 +26,9 @@ const MetodoPago = ({ onNext }) => {
     <detalles>
       {/* Barra */}
       <div className="top-bar">
-        <div className="blueBar">
-          <img src={exit} className="exit" alt="Exit"></img>
-        </div>
+        <button onClick={onBack} className="blueBar">
+          <img src={exit} className="exit"  alt="Exit"></img>
+        </button>
       </div>
 
       {/* Estado de transacción */}
@@ -57,6 +57,7 @@ const MetodoPago = ({ onNext }) => {
           <button className={isSeleccionPago1Clicked ? 'seleccionPago1 clicked' : 'seleccionPago1'} onClick={handleClickSeleccionPago1}></button>
           <img src={paypal} className="paypal" alt="Paypal"></img>
         </div>
+        <div className={isSeleccionPago2Clicked ? 'seleccionPago2 clicked' : 'seleccionPago2' /* Esta es la parte para que no salga, cambia el nombre de clase y ya */}>
         <p className="pagar">Detalles del pago</p>
         <input className='nombreTarjeta' placeholder='Nombre en tarjeta' />
         <input className='nroTarjeta' placeholder='Número de tarjeta' />
@@ -65,6 +66,7 @@ const MetodoPago = ({ onNext }) => {
         <input className='fechaTarjeta' placeholder='Fecha de expiración' />
         <input className='ccvTarjeta' placeholder='CCV' />
         <br/><br/>
+        </div>
         <p className="descuento">Codigo de descuento</p>
         <input className='codigo' placeholder='Codigo descuento' />
       </div>

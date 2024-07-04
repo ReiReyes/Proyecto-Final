@@ -5,7 +5,7 @@ import exit from "../assets/imgs/imgDetalles/Exit.png";
 // import delivery from "../assets/imgs/imgDetalles/imagenDelivery.png";
 import PropTypes from 'prop-types';
 
-const Confirmar = ({ onNext  }) => {
+const Confirmar = ({ onNext, onBack  }) => {
 
   const [horaVenezuela, setHoraVenezuela] = useState('');
 
@@ -21,9 +21,9 @@ const Confirmar = ({ onNext  }) => {
   return (
     <detalles>
       <div className="top-bar">
-        <div className="blueBar">
-          <img src={exit} className="exit" alt="Exit"></img>
-        </div>
+      <button onClick={onBack} className="blueBar">
+          <img src={exit} className="exit"  alt="Exit"></img>
+        </button>
       </div>
       <br/>
       <p className="pagoExitoso">¡Pago exitoso!</p>
