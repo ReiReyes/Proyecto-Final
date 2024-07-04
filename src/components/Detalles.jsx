@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 const Detalles = ({ onNext }) => {
   return (
-    <div className="detalles">
+    <div>
       {/* Barra */}
       <div className="top-bar-c">
         <a href={"/Carro"}><button className="blueBar">
