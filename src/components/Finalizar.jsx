@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import moment from 'moment-timezone'; // npm install moment-timezone
 import "../assets/styles/Finalizar.css";
 import exit from "../assets/imgs/imgDetalles/Exit.png";
+import PropTypes from 'prop-types';
 
-const Checkout = () => {
+const Finalizar = ({ onNext }) => {
+
   const [horaVenezuela, setHoraVenezuela] = useState('');
 
   useEffect(() => {
@@ -15,22 +17,19 @@ const Checkout = () => {
     getHoraVenezuela();
   }, []);
 
-  const redirectToMetodoPago = () => {
+  // const redirectToMetodoPago = () => {
 
-    console.log('Redirigiendo al método de pago');
-  };
+  //   console.log('Redirigiendo al método de pago');
+  // };
 
   return (
-    <finalizar>
+    <detalles>
       <div className="top-bar">
         <div className="blueBar">
-
-          {/* flecha para salir */}
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
-
-      <div className="linea"></div>
+      <div className="linea"></div>  
       <div className="circulos">       
         <div className="circulo" />
         <div className="circulo" />
@@ -57,12 +56,15 @@ const Checkout = () => {
         <p className="informacion">Total a pagar: </p>
       </div>
 
-      {/* Boton para ir a confirmado */}
-      <button className="confirmar-boton" onClick={redirectToMetodoPago}>
+      <button className="confirmar-boton" onClick={onNext}>
         <p className="confirmar">Finalizar</p>
       </button>
-    </finalizar>
+    </detalles>
   );
 };
 
-export default Checkout;
+Finalizar.propTypes = {
+  onNext: PropTypes.func.isRequired,
+};
+
+export default Finalizar;

@@ -1,15 +1,20 @@
   /*-----------------Metodo de pago-----------------*/
   .metodoPago {
-    height: 400px;
+    height: 500px;
     padding: 20px 0px 0px 30px;
     border: 2px solid rgba(41, 204, 186, 1);
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 1);
   }
 
-  .pagar{
+    .descuento,
+    .pagar{
     font-size: 30px;
     margin-bottom: 2%;
+  }
+
+  .descuento{
+    color: #F8646C;
   }
   
   .seleccionPago2,
@@ -34,7 +39,6 @@
   }
   
   /* Inputs */
-  
   .nroTarjeta,
   .nombreTarjeta {
     background-color: transparent; 
@@ -47,15 +51,15 @@
     margin-bottom: 5%;
   }
 
-
+  .codigo,
   .fechaTarjeta,
   .ccvTarjeta {
     background-color: transparent;
     color: #333;
     border: 1px solid #ccc;
     padding: 5px;
-    width: 35%; /* Establece el ancho de cada input al 45% para que estén uno al lado del otro */
-    margin-right: 10px; /* Añade un margen derecho para separar los inputs */
+    width: 35%;
+    margin-right: 10px; 
   }
   
   .fechaTarjeta::placeholder,
@@ -69,7 +73,7 @@
   }
   
   .contenedorInputs {
-    display: flex; /* Utiliza flexbox para alinear los elementos en línea */
+    display: flex; 
   }
 
   /*Otros*/
@@ -82,6 +86,6 @@
   .metodoPago {
     margin-left: 0px;
     width: 100%;
-    height: 430px;
+    height: 550px;
   }
 }

@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import moment from 'moment-timezone'; // npm install moment-timezone
 import "../assets/styles/Confirmado.css";
 import exit from "../assets/imgs/imgDetalles/Exit.png";
+// import delivery from "../assets/imgs/imgDetalles/imagenDelivery.png";
+import PropTypes from 'prop-types';
 
-const Checkout = () => {
+const Confirmar = ({ onNext  }) => {
+
   const [horaVenezuela, setHoraVenezuela] = useState('');
 
   useEffect(() => {
@@ -15,17 +18,10 @@ const Checkout = () => {
     getHoraVenezuela();
   }, []);
 
-  const redirectToMetodoPago = () => {
-
-    console.log('Redirigiendo al método de pago');
-  };
-
   return (
-    <confirmado>
+    <detalles>
       <div className="top-bar">
         <div className="blueBar">
-
-          {/* flecha para salir */}
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
@@ -43,18 +39,21 @@ const Checkout = () => {
         <br />
       </div>
 
-      {/* Boton para ir a comentar */}
-      <button className="comentar-boton" onClick={redirectToMetodoPago}>
+
+      <button className="comentar-boton" onClick={onNext}>
         <p className="comentar">Comentar</p>
       </button>
       <br />
-
-      {/* Boton para ir al menu (LandingPage) */}
-      <button className="confirmar-boton" onClick={redirectToMetodoPago}>
+      <button className="confirmar-boton">
         <p className="confirmar">Menú</p>
       </button>
-    </confirmado>
+    </detalles>
   );
 };
 
-export default Checkout;
+Confirmar.propTypes = {
+  onNext: PropTypes.func.isRequired,
+};
+
+
+export default Confirmar;

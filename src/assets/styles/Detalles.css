@@ -14,7 +14,7 @@ body {
   position: fixed;
   top: 0;
   z-index: 10;
-  background-image: url("../assets/images/imgBanner/Banner-Poke.jpg");
+  background-image: url("../assets/imgs/imgBanner/Banner-Poke.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -35,6 +35,7 @@ body {
 
 .exit {
   height: 50px;
+  cursor: pointer;
 }
 
 /*-----------------Estado del CheckOut-----------------*/
@@ -198,7 +199,7 @@ body {
 
   }
   .circulos {
-    gap: 200px; /* Espacio entre los círculos */
+    gap: 200px; 
   }
 
   .nombreEstados {
@@ -208,7 +209,7 @@ body {
   .nombreEstados p {
     margin-left: 50px;
     padding: 0 4rem;
-    margin-right: -40px; /* Agrega espacio entre los elementos */
+    margin-right: -40px;
     margin-bottom: 20px;
   }
 
@@ -218,7 +219,7 @@ body {
 
   .delivery {
     padding: 0px 0px 0px 0px;
-    justify-content: center; /* Agregamos esta propiedad para centrar horizontalmente el contenido */
+    justify-content: center; 
   }
 
     .horaEntrega {

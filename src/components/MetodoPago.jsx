@@ -3,8 +3,9 @@ import "../assets/styles/MetodoPago.css";
 import exit from "../assets/imgs/imgDetalles/Exit.png";
 import paypal from "../assets/imgs/imgMetodoPago/PayPal.png";
 import debito from "../assets/imgs/imgMetodoPago/Debito.png";
+import PropTypes from 'prop-types';
 
-const Checkout = () => {
+const MetodoPago = ({ onNext }) => {
 
   // Scripts para los botones de debito y paypal
   const [isSeleccionPago2Clicked, setSeleccionPago2Clicked] = useState(false);
@@ -20,17 +21,12 @@ const Checkout = () => {
     setSeleccionPago2Clicked(false);
   };
 
-  const redirectToMetodoPago = () => {
-
-  };
 
   return (
-    <metodo>
+    <detalles>
       {/* Barra */}
       <div className="top-bar">
         <div className="blueBar">
-
-          {/* flecha para salir */}
           <img src={exit} className="exit" alt="Exit"></img>
         </div>
       </div>
@@ -39,7 +35,7 @@ const Checkout = () => {
       <div className="linea"></div>
       <div className="circulos">       
         <div className="circulo" />
-        <div className="circuloRelleno" />
+        <div className="circulo" />
         <div className="circulo" />
       </div>
       
@@ -60,7 +56,6 @@ const Checkout = () => {
           <img src={debito} className="debito" alt="Debito"></img>
           <button className={isSeleccionPago1Clicked ? 'seleccionPago1 clicked' : 'seleccionPago1'} onClick={handleClickSeleccionPago1}></button>
           <img src={paypal} className="paypal" alt="Paypal"></img>
-
         </div>
         <p className="pagar">Detalles del pago</p>
         <input className='nombreTarjeta' placeholder='Nombre en tarjeta' />
@@ -69,16 +64,20 @@ const Checkout = () => {
         <br></br>
         <input className='fechaTarjeta' placeholder='Fecha de expiración' />
         <input className='ccvTarjeta' placeholder='CCV' />
-
+        <br/><br/>
+        <p className="descuento">Codigo de descuento</p>
+        <input className='codigo' placeholder='Codigo descuento' />
       </div>
 
-
-      {/* Boton para ir a finalizar */}
-      <button className="confirmar-boton" onClick={redirectToMetodoPago}>
+      <button className="confirmar-boton" onClick={onNext}>
         <p className="confirmar">Confirmar</p>
       </button>
-    </metodo>
+    </detalles>
   );
 };
 
-export default Checkout;
+MetodoPago.propTypes = {
+  onNext: PropTypes.func.isRequired,
+};
+
+export default MetodoPago;

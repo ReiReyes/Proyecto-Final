@@ -34,9 +34,6 @@
   border: 2px solid #29CCBA; 
   padding: 10px; 
   border-radius: 10px;
-  /* Se supone que estos dos comandos hacen que el texto se ponga en forma
-  de cascada y que cuando llegue al borde se detenga,
-  pero no quieren hacer nada */
   text-align: top;
   overflow-wrap: break-word;
 }
