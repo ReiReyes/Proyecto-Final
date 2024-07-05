@@ -1,6 +1,6 @@
 import "../assets/styles/Admin.css";
 import "../assets/styles/AdminHist.css";
-import Headerp from "../components/Header-p.jsx";
+import Header from "../components/Header-p.jsx";
 import Order from "../components/Order.jsx";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
@@ -80,13 +80,8 @@ const [email, setEmail] = useState("");
     );
 
     return (
-        <div className="bodyA">
-            <Headerp
-                primero="Inicio" enlacep="LandingPage"
-                segundo="Gestionar Menú" enlaces="Manage-Menu"
-                tercero="Gestionar Historial" enlacet="Manage-Historial"
-                cuarto="Gestionar Promociones" enlacec="Manage-Coupons"
-            />
+    <div className="bodyA">
+        <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial" enlacec="/LandingPage" cuarto="Inicio" />
             <div className="adminh-wrap">
                 <div className="listapedidos">
                     <h1 className="pedidotitulo">
