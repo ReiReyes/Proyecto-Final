@@ -40,9 +40,9 @@ function App() {
                 <Route path="/Profile_security" element={<Profile_Sec />} />
                 <Route path="/Profile_history" element={<ProfileHist />} />
                 <Route path="/LandingPage" element={<LandingPage />} />
-                <Route path="Manage-Menu" element={<AdminMenu/>}/>
-                <Route path="Manage-Coupons" element={<AdminPromo/>}/>
-                <Route path="Manage-Historial" element={<AdminHist/>}/>
+                <Route path="/Manage-Menu" element={<AdminMenu/>}/>
+                <Route path="/Manage-Coupons" element={<AdminPromo/>}/>
+                <Route path="/Manage-Historial" element={<AdminHist/>}/>
                 <Route path="/Entradas" element={<Entradas />} />
                 <Route path="/Bowls" element={<Bowls />} />
                 <Route path="/Burritos" element={<Burritos />} />

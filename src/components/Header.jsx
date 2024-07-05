@@ -55,6 +55,10 @@ const Header = () => {
               </>
             ) : (
               <>
+                <a className="registerh" href="/Manage-Menu">
+                  Admin
+                </a>
+                <img src={Barra} alt="Separador" className="separator" />
                 <a className="registerh" href="/register">
                   Registrarse
                 </a>
