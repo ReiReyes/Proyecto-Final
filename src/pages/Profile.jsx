@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { auth, db, storage } from "./firebase"; 
+import { auth, db, storage } from "./firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import '../assets/styles/Profile.css';
@@ -76,7 +76,7 @@ function Profile() {
     return <div className="loading_screen_profile">loading...</div>;
   }
 
-async function handleLogout() {
+  async function handleLogout() {
     try {
       await auth.signOut();
       window.location.href = "/login";
@@ -85,12 +85,12 @@ async function handleLogout() {
       console.error("Error logging out:", error.message);
     }
   }
-  
+
   return (
     <>
       <form onSubmit={handleSave}>
         <div className='bodyProfile'>
-          <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial"  cuarto="Log Out" />
+          <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial" enlacec="/LandingPage" cuarto="Inicio" />
           <div className='User_Profile'>
             <div className="Img_user_container">
               <img className="Img_user" src={profilePic} alt="User" />

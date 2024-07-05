@@ -53,6 +53,15 @@
     overflow: hidden;
 }
 
+.cards_buttons_sec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+
+
 .cards{
     display: flex;
     flex-wrap: wrap;
@@ -186,6 +195,12 @@
     align-items: center;
   }
 
+  .cards_buttons_sec {
+    width: 200%;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .card, .card_preferences {
     max-width: 100%;
     width: auto;
@@ -200,4 +215,11 @@
   .cards_button, .display_correo {
     font-size: 1em;
   }
+}
+
+.cards_buttons_sec .card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
 }
