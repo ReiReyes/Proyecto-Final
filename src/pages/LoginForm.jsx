@@ -81,7 +81,7 @@ const LoginForm = () => {
             
             <form onSubmit={handleSubmit}>
                 <div className="wrapper-out">
-                    <h1><a href="#"><IoIosArrowBack className="icon1" /></a><FaUser className='icon2'/> Iniciar Sesión</h1>
+                    <h1><a href="/LandingPage"><IoIosArrowBack className="icon1" /></a><FaUser className='icon2'/> Iniciar Sesión</h1>
                 </div>
                 
                 

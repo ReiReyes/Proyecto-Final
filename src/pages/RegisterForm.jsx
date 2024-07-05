@@ -57,7 +57,7 @@ const RegisterForm = () => {
         
         <form onSubmit={handleRegister}>
             <div className="wrapper-out-r">
-                <h1> <a href="/login"><IoIosArrowBack className="icon-r" /></a> <FaUser className='icon-r2'/></h1>
+                <h1> <a href="/LandingPage"><IoIosArrowBack className="icon-r" /></a> <FaUser className='icon-r2'/></h1>
             </div>
             <div className="input-box-r">
                 <input type="text" placeholder="Nombre" onChange={(e) => setFname(e.target.value)} required/>
