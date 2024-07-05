@@ -1,23 +1,37 @@
 import '../assets/styles/AddCod.css';
 import { useState, useEffect } from 'react';
 
-function AddCod({ show, onClose, onSave }) {
+function AddCod({ show, onClose }) {
     const [input1, setInput1] = useState('');
     const [input2, setInput2] = useState('');
+    const [promosList, setPromosList] = useState([]);
 
     useEffect(() => {
-        if (!show) {
-            setInput1('');
-            setInput2('');
-        }
-    }, [show]);
+        const storedPromos = JSON.parse(localStorage.getItem('PROMOS')) || [];
+        setPromosList(storedPromos);
+    }, []);
 
     const handleSave = () => {
         if (input1.length > 0 && input1.length <= 6 && input2 >= 1 && input2 <= 100) {
-            onSave(input1, input2);
-            setInput1(''); // Clear input1
-            setInput2(''); // Clear input2
+            const promo = {
+                id: Date.now(),
+                nombreCod: input1,
+                descuento: input2 / 100,
+                estado: true,
+            };
+
+            let storedPromos = JSON.parse(localStorage.getItem('PROMOS')) || [];
+            storedPromos.push(promo);
+            localStorage.setItem('PROMOS', JSON.stringify(storedPromos));
+            
+            setPromosList(storedPromos); // Actualiza el estado con las promociones almacenadas
+
+            console.log('Promoción guardada:', promo);
+
+            setInput1(''); // Limpiar input1
+            setInput2(''); // Limpiar input2
             onClose();
+            window.location.reload();
         } else {
             alert('Por favor, asegúrese de que todos los campos sean válidos.');
         }
@@ -28,12 +42,12 @@ function AddCod({ show, onClose, onSave }) {
     }
 
     return (
-        <div className="popup-overlay">
-            <div className="popup">
-                <div className='datosCodigo'></div>
+        <div className="popup-overlay-ac">
+            <div className="popup-ac">
+                <div className='datosCodigo-ac'></div>
                 <input 
                     type='text' 
-                    className='input-Cod' 
+                    className='input-Cod-ac ' 
                     placeholder='Codigo' 
                     maxLength={6}
                     value={input1} 
@@ -41,15 +55,15 @@ function AddCod({ show, onClose, onSave }) {
                 />
                 <input 
                     type='number' 
-                    className='input-Cod' 
+                    className='input-Cod-ac' 
                     placeholder='Porcentaje' 
                     min={1} 
                     max={100} 
                     value={input2} 
                     onChange={(e) => setInput2(e.target.value)} 
                 />
-                <button className='boton-Cod' onClick={handleSave}>Activar</button>
-                <button className='boton-Cod' onClick={onClose}>Cerrar</button>
+                <button className='boton-Cod-ac' onClick={handleSave}>Activar</button>
+                <button className='boton-Cod-ac' onClick={onClose}>Cerrar</button>
             </div>
         </div>
     );

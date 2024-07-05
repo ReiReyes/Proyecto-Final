@@ -5,9 +5,12 @@ import exit from "../assets/imgs/imgDetalles/Exit.png";
 import PropTypes from 'prop-types';
 
 const Finalizar = ({ onNext, onBack }) => {
-
   const [horaVenezuela, setHoraVenezuela] = useState('');
-  const [totalPagar, setTotalPagar] = useState(25); // Aqui coloca el total de carrito
+  const [totalPagar, setTotalPagar] = useState(25); // Total inicial del carrito
+  const [codigoPromo, setCodigoPromo] = useState(''); // Estado para almacenar el código promocional ingresado
+  const [PromosList, setPromosList] = useState([]); // Estado para almacenar las promociones disponibles
+  const [promoAplicada, setPromoAplicada] = useState(false); // Estado para controlar si ya se aplicó una promoción
+
   useEffect(() => {
     const getHoraVenezuela = () => {
       const horaActual = moment().tz('America/Caracas').format('HH:mm:ss');
@@ -17,23 +20,27 @@ const Finalizar = ({ onNext, onBack }) => {
     getHoraVenezuela();
   }, []);
 
+  useEffect(() => {
+    const storedPromos = JSON.parse(localStorage.getItem('PROMOS')) || [];
+    setPromosList(storedPromos);
+  }, []);
+
   const metodo = 'Paypal';
+
   const handleFinalizar = () => {
     const pedido = {
       id: Date.now(),
-      metodoPago: metodo,   //el metodo de pago cuando lo logres pasar cambialo aqui
+      metodoPago: metodo,
       fechaPedido: moment().format('DD/MM/YYYY'),
       horaPedido: horaVenezuela,
       totalPagar: totalPagar,
       estado: 'Finalizado',
       productosPedido: [
-        { nombre: "Hamburguesa", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas"},
+        { nombre: "Hamburguesa", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas" },
         { nombre: "Papas", cantidad: 1, precio: 10, img: "", ingredientes: "Cosas, cosas" },
         { nombre: "Refresco", cantidad: 1, precio: 5, img: "", ingredientes: "BASE, ATÚN, SALMÓN,CAMARÓN, EDAMAME,ZANAHORIA, KANI, AGUACATE." }
-        // esto es solo una muestra cambia aqui por los productos que tengas en el carrito y que se vean con esa estructura
-    ],
-    correo: "", // esto es solo un ejemplo, cuando tengas el correo del usuario cambialo aqui
-      
+      ],
+      correo: "", // Aquí deberías incluir el correo del usuario cuando lo tengas disponible
     };
 
     let storedPedidos = JSON.parse(localStorage.getItem('PEDIDOS')) || [];
@@ -45,20 +52,41 @@ const Finalizar = ({ onNext, onBack }) => {
     onNext();
   };
 
+  const aplicarPromo = () => {
+    if (promoAplicada) {
+      alert('Ya has aplicado un código promocional.');
+      return;
+    }
+
+    const promoEncontrada = PromosList.find(promo => promo.nombreCod === codigoPromo);
+    if (promoEncontrada.estado) {
+      const descuento = totalPagar * promoEncontrada.descuento;
+      const nuevoTotal = totalPagar - descuento;
+
+      if (nuevoTotal < 0) {
+        setTotalPagar(0); // No permitir un total negativo
+      } else {
+        setTotalPagar(nuevoTotal);
+        setPromoAplicada(true); // Marcar que se ha aplicado un código promocional
+
+      }
+    }
+  };
+
   return (
     <detalles>
       <div className="top-bar-c">
-      <button onClick={onBack} className="blueBar">
-          <img src={exit} className="exit"  alt="Exit"></img>
+        <button onClick={onBack} className="blueBar">
+          <img src={exit} className="exit" alt="Exit" />
         </button>
       </div>
-      <div className="linea"></div>  
-      <div className="circulos">       
+      <div className="linea"></div>
+      <div className="circulos">
         <div className="circulo" />
         <div className="circulo" />
         <div className="circuloRelleno" />
       </div>
-      
+
       <div className="nombreEstados">
         <p>Detalles</p>
         <p>Método de pago</p>
@@ -76,7 +104,19 @@ const Finalizar = ({ onNext, onBack }) => {
       </div>
 
       <div className="confirmarCuadro2">
-        <p className="informacion">Total a pagar: {25}</p>
+        <p className="informacion">Total a pagar: {totalPagar}</p>
+        <div className='input-wrapper-c'>
+          <input
+            type="text"
+            className='input-Cod-c'
+            placeholder='Codigo promocional (opcional)'
+            maxLength={6}
+            value={codigoPromo}
+            onChange={(e) => setCodigoPromo(e.target.value)}
+            disabled={promoAplicada} // Deshabilitar el input si ya se aplicó un código
+          />
+          <button className="boton-Cod-c" onClick={aplicarPromo} disabled={promoAplicada}>Aplicar</button>
+        </div>
       </div>
 
       <button className="confirmar-boton" onClick={handleFinalizar}>
@@ -91,3 +131,4 @@ Finalizar.propTypes = {
 };
 
 export default Finalizar;
+

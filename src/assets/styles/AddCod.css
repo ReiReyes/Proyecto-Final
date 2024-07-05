@@ -1,5 +1,5 @@
 
-.popup-overlay {
+.popup-overlay-ac {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
     z-index: 1000;
   }
   
-  .popup {
+  .popup-ac {
     background-color: #F3F3F3;
     padding: 20px;
     border-radius: 10px;
@@ -23,7 +23,7 @@
   }
 
   
-.input-Cod {
+.input-Cod-ac {
     display: block;
     width: 80%;
     margin: 10px auto;
@@ -34,11 +34,11 @@
     color: #29ccba;
   }
 
-.input-Cod::placeholder{
+.input-Cod-ac::placeholder{
     color: #29ccba;
 
 }
-.boton-Cod{
+.boton-Cod-ac{
     background-color: #29ccba;
     width: 20%;
     margin: 10px auto;
@@ -50,11 +50,11 @@
     text-align: center;
     justify-content: center;
 }
-.boton-Cod:hover{
+.boton-Cod-ac:hover{
     background-color: #1E9D95;
 }
 @media only screen and (max-width: 440px) {
-    .boton-Cod{
+    .boton-Cod-ac{
         font-size: 10px;
     }
 }

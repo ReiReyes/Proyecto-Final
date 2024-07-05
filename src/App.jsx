@@ -28,11 +28,11 @@ function App() {
       setUser(user);
     }); 
   });
-
   return (
         <ShopContextProvider>
           <BrowserRouter>
               <Routes>
+                
                 <Route index element={<LandingPage />}/>
                 <Route path="/Login" element={<LoginForm />} />
                 <Route path="/Register" element={<RegisterForm />} />
