@@ -1,14 +1,15 @@
-import "../assets/styles/ProfileHist.css";
-import Header from "../components/Header-p.jsx";
+import "../assets/styles/Admin.css";
+import "../assets/styles/AdminHist.css";
+import Headerp from "../components/Header-p.jsx";
 import Order from "../components/Order.jsx";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Plato from "../components/Plato.jsx";
 
-function ProfileHist() {
+function AdminHist() {
     const navRefA = useRef(null);
-    const [selectedOrder, setSelectedOrder] = useState(null);
+    const [selectedPedido, setSelectedPedido] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
 
     const showBusq = () => {
@@ -19,103 +20,85 @@ function ProfileHist() {
         }
     };
 
-    const orderList = [
-        {
-            id: 1,
-            codigo: "HO1820234",
-            hora: "12:01",
-            fecha: "15/5/2024",
-            metodoPago: "Paypal",
-            estado: "Finalizado",
-            total: 35,
-            detalles: [
-                { nombre: "Hamburguesa", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas" },
-                { nombre: "Papas", cantidad: 1, precio: 10, img: "", ingredientes: "Cosas, cosas" },
-                { nombre: "Refresco", cantidad: 1, precio: 5, img: "", ingredientes: "Cosas, cosas" }
-            ]
-        },
-        {
-            id: 2,
-            codigo: "HO1820235",
-            hora: "13:01",
-            fecha: "15/5/2024",
-            metodoPago: "Tarjeta de Crédito",
-            estado: "En Proceso",
-            total: 80,
-            detalles: [
-                { nombre: "Pasta", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas" },
-                { nombre: "Papas", cantidad: 1, precio: 10, img: "", ingredientes: "Cosas, cosas" },
-                { nombre: "Refresco", cantidad: 1, precio: 50, img: "", ingredientes: "Cosas, cosas" }
-            ]
-        }
-    ];
+    const [pedidosList, setPedidos] = useState([]);
 
-    const handleOrderClick = (order) => {
-        setSelectedOrder(order);
+    useEffect(() => {
+        const storedPedidos = JSON.parse(localStorage.getItem('PEDIDOS')) || [];
+        setPedidos(storedPedidos);
+    }, []);
+
+    const handlePedidoClick = (pedido) => {
+        setSelectedPedido(pedido);
     };
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
     };
 
-    const filteredOrders = orderList.filter(order =>
-        order.codigo.includes(searchTerm.toUpperCase()) ||
-        order.hora.includes(searchTerm.replace(" ", '')) ||
-        order.fecha.includes(searchTerm)
+    const filteredPedidos = pedidosList.filter(pedido =>
+        pedido.id.toString().includes(searchTerm.toUpperCase()) ||
+        pedido.horaPedido.includes(searchTerm.replace(" ", '')) ||
+        pedido.fechaPedido.includes(searchTerm)
     );
 
     return (
-        <div className="body_ProfileHist">
-            <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial" enlacec="/LandingPage" cuarto="Inicio" />
-            <div className="profileHist_container">
-                <div className="lista_pedidos_profileHist">
-                    <h1 className="titulo_pedido_profileHist">
-                        <div className="titulo_profileHist">PEDIDO'S</div>
-                        <button className="lupa_icon_profileHist" onClick={showBusq}><FaMagnifyingGlass /></button>
+        <div className="bodyA">
+            <Headerp
+                primero="Inicio" enlacep="LandingPage"
+                segundo="Gestionar Menú" enlaces="Manage-Menu"
+                tercero="Gestionar Historial" enlacet="Manage-Historial"
+                cuarto="Gestionar Promociones" enlacec="Manage-Coupons"
+            />
+            <div className="adminh-wrap">
+                <div className="listapedidos">
+                    <h1 className="pedidotitulo">
+                        <div className="textotitulo">PEDIDO'S</div>
+                        <button className="lupa-icon-admin" onClick={showBusq}><FaMagnifyingGlass /></button>
                     </h1>
-                    <div className="pedidos_historial_profileHist" ref={navRefA}>
-                        <button className="close_icon_profileHist" onClick={showBusq}><FaTimes /></button>
+                    <div className="pedidoshistorial" ref={navRefA}>
+                        <button className="close-icon-admin" onClick={showBusq}><FaTimes /></button>
                         <input
-                            className="search_profileHist"
+                            className="busqueda"
                             type="text"
                             placeholder="Buscar"
                             value={searchTerm}
                             onChange={handleSearchChange}
                         />
-                        <div className="ordenes_profileHist">
-                            {filteredOrders.map((order) => (
+                        <div className="ordenes">
+                            {filteredPedidos.map((pedido) => (
                                 <Order
-                                    key={order.codigo}
-                                    hora={order.hora}
-                                    fecha={order.fecha}
-                                    onClickOrder={() => handleOrderClick(order)}
+                                    key={pedido.id}
+                                    codigo={pedido.id}
+                                    hora={pedido.horaPedido}
+                                    fecha={pedido.fechaPedido}
+                                    onClickOrder={() => handlePedidoClick(pedido)}
                                 />
                             ))}
                         </div>
                     </div>
                 </div>
-                <div className="detalles_pedido_profileHist">
-                    <h1 className="detalle_titulo_profileHist">DETALLES DEL PEDIDO</h1>
-                    <div className="separador_profileHist"></div>
-                    {selectedOrder ? (
-                        <div className="detalles_profileHist">
-                            <div className="datospedido_profileHist">
-                                <div className="dato_profileHist">
-                                    <p className="titulo_dato_profileHist">Metodo Pago</p>
-                                    <p className="info_dato_profileHist">{selectedOrder.metodoPago}</p>
+                <div className="detallepedido">
+                    <h1 className="detalletitulo">DETALLES DEL PEDIDO</h1>
+                    <div className="separador"></div>
+                    {selectedPedido ? (
+                        <div className="detalles">
+                            <div className="datospedido">
+                                <div className="dato">
+                                    <p className="titulodato">Metodo Pago</p>
+                                    <p className="infodato">{selectedPedido.metodoPago}</p>
                                 </div>
-                                <div className="dato_profileHist">
-                                    <p className="titulo_dato_profileHist">Estado Actual</p>
-                                    <p className="info_dato_profileHist">{selectedOrder.estado}</p>
+                                <div className="dato">
+                                    <p className="titulodato">Estado Actual</p>
+                                    <p className="infodato">{selectedPedido.estado}</p>
                                 </div>
-                                <div className="dato_profileHist">
-                                    <p className="titulo_dato_profileHist">Total Pagado</p>
-                                    <p className="info_dato_profileHist">{selectedOrder.total}$</p>
+                                <div className="dato">
+                                    <p className="titulodato">Total Pagado</p>
+                                    <p className="infodato">{selectedPedido.total}$</p>
                                 </div>
                             </div>
-                            <div className="Orden_usuario">
-                                <div className="orden_user">
-                                    {selectedOrder.detalles.map((detalle, index) => (
+                            <div className="tuOrden">
+                                <div className="orden">
+                                    {selectedPedido.productosPedido.map((detalle, index) => (
                                         <Plato
                                             key={index}
                                             nombre={detalle.nombre}
@@ -128,7 +111,7 @@ function ProfileHist() {
                             </div>
                         </div>
                     ) : (
-                        <p className="detalle_titulo_profileHist">Selecciona un pedido para ver los detalles</p>
+                        <p className="detalletitulo">Selecciona un pedido para ver los detalles</p>
                     )}
                 </div>
             </div>
@@ -136,4 +119,4 @@ function ProfileHist() {
     );
 }
 
-export default ProfileHist;
+export default AdminHist;

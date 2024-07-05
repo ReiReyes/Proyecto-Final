@@ -59,6 +59,9 @@
     justify-content: space-between;
     max-width: 100%;
 }
+
+
+
 .cards{
     display: flex;
     flex-wrap: wrap;
@@ -212,4 +215,11 @@
   .cards_button, .display_correo {
     font-size: 1em;
   }
+}
+
+.cards_buttons_sec .card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
 }

@@ -80,10 +80,10 @@ const Header = () => {
             <a href="#about-section" onClick={scrollToSection}>
               NOSOTROS
             </a>
-            <a className="pedidos" href="/menu">
+            <a className="pedidos" href="/Entradas">
               MENÚ
             </a>
-            <a href="/cart">
+            <a href="/carro">
               <LuShoppingBasket className="shopcart" />
             </a>
             <button className="btn close-button" onClick={showNavbar}>

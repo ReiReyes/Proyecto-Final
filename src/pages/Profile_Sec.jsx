@@ -148,7 +148,7 @@ function Profile_Sec() {
           <div className='card_box_2'>
             <div className='cards'>
               {card_correo.map((card, i) => (
-                <div key={i} className='cards_buttons_sec'>
+                <div key={i} className='cards'>
                   <h3 className='titles_security'>{card.title}</h3>
                   <div className='card'>
                     <p className='display_correo'>{card.text_1}</p>
