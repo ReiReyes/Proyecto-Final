@@ -29,7 +29,7 @@ function ProfileHist() {
             estado: "Finalizado",
             total: 35,
             detalles: [
-                { nombre: "Hamburguesa", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas"},
+                { nombre: "Hamburguesa", cantidad: 2, precio: 20, img: "", ingredientes: "Cosas, cosas" },
                 { nombre: "Papas", cantidad: 1, precio: 10, img: "", ingredientes: "Cosas, cosas" },
                 { nombre: "Refresco", cantidad: 1, precio: 5, img: "", ingredientes: "Cosas, cosas" }
             ]
@@ -66,7 +66,7 @@ function ProfileHist() {
 
     return (
         <div className="body_ProfileHist">
-            <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial"  cuarto="Log Out" />
+            <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial" enlacec="/LandingPage" cuarto="Inicio" />
             <div className="profileHist_container">
                 <div className="lista_pedidos_profileHist">
                     <h1 className="titulo_pedido_profileHist">

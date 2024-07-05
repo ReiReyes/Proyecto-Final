@@ -1,23 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../assets/styles/Profile_Sec.css';
 import Header from '../components/Header-p';
 import Change_Pass from '../components/Change_Pass';
-import { updatePassword } from 'firebase/auth';
-import { auth, db, storage } from "./firebase";
+import { updatePassword, onAuthStateChanged } from 'firebase/auth';
+import { auth, db } from "./firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 
 function Profile_Sec() {
   const [newPassword, setNewPassword] = useState("");
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [showPaypalModal, setShowPaypalModal] = useState(false);
+  const [email, setEmail] = useState("Loading...");
 
   const handleModalPasswordOpen = () => setShowPasswordModal(true);
   const handleModalPasswordClose = () => setShowPasswordModal(false);
-  const handleModalPaypalOpen= () => setShowPaypalModal(true);
+  const handleModalPaypalOpen = () => setShowPaypalModal(true);
   const handleModalPaypalClose = () => setShowPaypalModal(false);
 
-  const [PaypalUser, setPaypalUser] = useState("Usuario")
-  const [PaypalPassword, setPaypalPassword] = useState("Contraseña")
+  const [PaypalUser, setPaypalUser] = useState("Usuario");
+  const [PaypalPassword, setPaypalPassword] = useState("Contraseña");
 
   const handleChangePassword = async (event) => {
     event.preventDefault();
@@ -42,13 +43,6 @@ function Profile_Sec() {
       title: 'Pago en Linea',
       text: 'Paypal',
       button: handleModalPaypalOpen,
-    },
-  ]);
-
-  const [card_correo] = useState([
-    {
-      title: 'Correo Electronico',
-      text_1: 'd.andres@correo.unimet.edu.ve',
     },
   ]);
 
@@ -87,23 +81,62 @@ function Profile_Sec() {
     event.preventDefault();
     const change = doc(db, "Users", auth.currentUser.uid);
     await updateDoc(change, {
-    usuario_paypal: PaypalUser,
-    password_paypal: PaypalPassword,
+      usuario_paypal: PaypalUser,
+      password_paypal: PaypalPassword,
     });
     console.log("Changes saved");
   };
 
+  const fetchUserData = async (user) => {
+    try {
+      console.log("Fetching user data for user:", user.uid);
+      const docRef = doc(db, "Users", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        console.log("User data fetched:", data);
+        setEmail(data.email || "Email not available");
+      } else {
+        console.log("User document does not exist");
+        setEmail("Email not available");
+      }
+    } catch (error) {
+      console.error("Error fetching user data: ", error);
+      setEmail("Error fetching email");
+    }
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("User is logged in:", user);
+        fetchUserData(user);
+      } else {
+        console.log("No user logged in");
+        setEmail("No user logged in");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const card_correo = [
+    {
+      title: 'Correo Electronico',
+      text_1: email,
+    },
+  ];
 
   return (
     <>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <div className='bodyProfile_Sec'>
-        <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" tercero="Historial" cuarto="Log Out" />
+        <Header enlacep="/Profile" primero="Perfil" enlaces="Profile_security" segundo="Metodos y Seguridad" enlacet="/Profile_history" tercero="Historial" enlacec="/LandingPage" cuarto="Inicio" />
         <section className='section_options'>
           <div className='card_box'>
             <div className='cards'>
               {cards.map((card, i) => (
-                <div key={i} className='cards'>
+                <div key={i} className='cards_buttons_sec'>
                   <h3 className='titles_security'>{card.title}</h3>
                   <div className='card'>
                     <button className='cards_button' onClick={card.button}>{card.text}</button>
@@ -115,7 +148,7 @@ function Profile_Sec() {
           <div className='card_box_2'>
             <div className='cards'>
               {card_correo.map((card, i) => (
-                <div key={i} className='cards'>
+                <div key={i} className='cards_buttons_sec'>
                   <h3 className='titles_security'>{card.title}</h3>
                   <div className='card'>
                     <p className='display_correo'>{card.text_1}</p>
@@ -165,7 +198,7 @@ function Profile_Sec() {
         </form>
       </Change_Pass>
 
-      <Change_Pass show={showPaypalModal} handleClose={handleModalPaypalClose} operation= "Paypal">
+      <Change_Pass show={showPaypalModal} handleClose={handleModalPaypalClose} operation="Paypal">
         <form onSubmit={handleSave_Paypal}>
           <div>
             <input
