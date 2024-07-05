@@ -135,6 +135,7 @@ const [email, setEmail] = useState("");
       <p className="estadoActual">Confirmar</p>
 
       <div className="confirmarCuadro1">
+        <br/>
         <p className="informacion">Método de pago: {metodo} </p>
         <br />
         <p className="informacion">Fecha de pedido: {moment().format('DD/MM/YYYY')}</p>

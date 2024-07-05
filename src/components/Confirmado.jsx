@@ -29,6 +29,7 @@ const Confirmar = ({ onNext, onBack  }) => {
       <p className="pagoExitoso">¡Pago exitoso!</p>
       
       <div className="finalizadoCuadro">
+        <br/>
         <p className="informacion">Número de Orden: </p>
         <br />
         <p className="informacion">Método de pago: </p>
