@@ -48,7 +48,7 @@ const Header = () => {
                     Admin
                   </a>
                 ) : (
-                  <a className="perfil-link  move-left" href="/profile">
+                  <a className="perfil-link  move-left" href="/Profile">
                     Perfil
                   </a>
                 )}
@@ -63,7 +63,7 @@ const Header = () => {
                   Registrarse
                 </a>
                 <img src={Barra} alt="Separador" className="separator" />
-                <img src={Usuario} alt="Usuario" className="user-icon" />
+                <a href="/Profile"><img src={Usuario} alt="Usuario" className="user-icon" /></a>
                 <a className="loginh" href="/login">
                   Iniciar Sesión
                 </a>
