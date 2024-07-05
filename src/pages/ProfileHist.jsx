@@ -6,9 +6,46 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import { useRef, useState, useEffect } from "react";
 import Plato from "../components/Plato.jsx";
+import {doc, getDoc} from 'firebase/firestore'
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth, db } from "../pages/firebase";
 
-function AdminHist() {
+function ProfileHist() {
 
+const [email, setEmail] = useState("");
+
+// buscar correo
+  const fetchUserData = async (user) => {
+    try {
+      console.log("Fetching user data for user:", user.uid);
+      const docRef = doc(db, "Users", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setEmail(data.email || "Email not available");
+      } else {
+        setEmail("Email not available");
+      }
+    } catch (error) {
+      setEmail("Error fetching email");
+    }
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("User is logged in:", user);
+        fetchUserData(user);
+      } else {
+        console.log("No user logged in");
+        setEmail("No user logged in");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+// buscar correo
     
     const navRefA = useRef(null);
     const [selectedPedido, setSelectedPedido] = useState(null);
@@ -27,6 +64,7 @@ function AdminHist() {
     useEffect(() => {
         const storedPedidos = JSON.parse(localStorage.getItem('PEDIDOS')) || [];
         setPedidos(storedPedidos);
+
     }, []);
 
     const handlePedidoClick = (pedido) => {
@@ -38,9 +76,7 @@ function AdminHist() {
     };
 
     const filteredPedidos = pedidosList.filter(pedido =>
-        pedido.id.toString().includes(searchTerm.toUpperCase()) ||
-        pedido.horaPedido.includes(searchTerm.replace(" ", '')) ||
-        pedido.fechaPedido.includes(searchTerm)
+        pedido.correo.includes(email),
     );
 
     return (
@@ -121,4 +157,4 @@ function AdminHist() {
     );
 }
 
-export default AdminHist;
+export default ProfileHist;
