@@ -3,8 +3,45 @@ import moment from 'moment-timezone'; // npm install moment-timezone
 import "../assets/styles/Finalizar.css";
 import exit from "../assets/imgs/imgDetalles/Exit.png";
 import PropTypes from 'prop-types';
+import {doc, getDoc} from 'firebase/firestore'
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth, db } from "../pages/firebase";
 
 const Finalizar = ({ onNext, onBack }) => {
+const [email, setEmail] = useState("");
+
+// buscar correo
+  const fetchUserData = async (user) => {
+    try {
+      console.log("Fetching user data for user:", user.uid);
+      const docRef = doc(db, "Users", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setEmail(data.email || "Email not available");
+      } else {
+        setEmail("Email not available");
+      }
+    } catch (error) {
+      setEmail("Error fetching email");
+    }
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("User is logged in:", user);
+        fetchUserData(user);
+      } else {
+        console.log("No user logged in");
+        setEmail("No user logged in");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+// buscar correo
 
   const [horaVenezuela, setHoraVenezuela] = useState('');
   const [totalPagar, setTotalPagar] = useState(25); // Aqui coloca el total de carrito
@@ -32,7 +69,7 @@ const Finalizar = ({ onNext, onBack }) => {
         { nombre: "Refresco", cantidad: 1, precio: 5, img: "", ingredientes: "BASE, ATÚN, SALMÓN,CAMARÓN, EDAMAME,ZANAHORIA, KANI, AGUACATE." }
         // esto es solo una muestra cambia aqui por los productos que tengas en el carrito y que se vean con esa estructura
     ],
-    correo: "", // esto es solo un ejemplo, cuando tengas el correo del usuario cambialo aqui
+    correo: email, // esto es solo un ejemplo, cuando tengas el correo del usuario cambialo aqui
       
     };
 

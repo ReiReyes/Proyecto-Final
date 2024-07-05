@@ -8,6 +8,8 @@ import { useRef, useState, useEffect } from "react";
 import Plato from "../components/Plato.jsx";
 
 function AdminHist() {
+
+    
     const navRefA = useRef(null);
     const [selectedPedido, setSelectedPedido] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
