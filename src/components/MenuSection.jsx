@@ -29,7 +29,6 @@ const MenuSection = () => {
               BASE, ATÚN, SALMÓN, CAMARÓN, RÁBANO, ZANAHORIA, KALE, AGUACATE,
               SALSAS
             </p>
-            <div className="more-icon">+</div>
           </div>
           <div className="card_f">
             <img src={kilauea} alt="Kilauea" />
@@ -39,7 +38,6 @@ const MenuSection = () => {
               BASE, ATÚN, SALMÓN, CAMARÓN, RÁBANO, ZANAHORIA, KALE, AGUACATE,
               SALSAS
             </p>
-            <div className="more-icon">+</div>
           </div>
           <div className="card_f">
             <img src={salmonTherapy} alt="Salmon Therapy" />
@@ -49,7 +47,6 @@ const MenuSection = () => {
               BASE, ATÚN, SALMÓN, CAMARÓN, RÁBANO, ZANAHORIA, KALE, AGUACATE,
               SALSAS
             </p>
-            <div className="more-icon">+</div>
           </div>
           <div className="card_f">
             <img src={crazyOasis} alt="Crazy Oasis" />
@@ -59,7 +56,6 @@ const MenuSection = () => {
               BASE, ATÚN, SALMÓN, CAMARÓN, RÁBANO, ZANAHORIA, KALE, AGUACATE,
               SALSAS
             </p>
-            <div className="more-icon">+</div>
           </div>
         </div>
       </div>
